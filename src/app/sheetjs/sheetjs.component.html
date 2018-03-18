@@ -1,0 +1,14 @@
+<p>Choose a data file</p>
+<div>
+  <input type="file" (change)="onFileChange($event)" multiple="false" /><span *ngIf="data">&nbsp;&mdash;&nbsp;<button (click)="export()">Export!</button>&nbsp;&mdash;&nbsp;</span>
+</div>
+<div *ngIf="data">
+  <table class="sjs-table">
+    <tr *ngFor="let row of data">
+      <td *ngFor="let val of row">
+        {{val}}
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -3,7 +3,13 @@
   <h1>
     {{ title }}
   </h1>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/data">Data</a>
+    <a routerLink="/resorts">Resorts</a>
+  </nav>
 </div>
+<app-messages></app-messages>
 <div>
   <ol>
     <li>Upload data</li>
@@ -19,6 +25,5 @@
     </ul>
   </ol>
 </div>
-<app-resorts></app-resorts>
-
-
+<hr />
+<router-outlet></router-outlet>

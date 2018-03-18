@@ -1,0 +1,10 @@
+<h2>My Resorts</h2>
+<ul class="heroes">
+	<li
+    *ngFor="let resort of resorts"
+    (click)="onSelect(resort)"
+    [class.selected]="isSelected(resort)">
+      <span class="badge">{{resort.name}} | {{resort.trails}}</span>
+  </li>
+</ul>
+<app-resort-detail [resort]="selectedResort"></app-resort-detail>

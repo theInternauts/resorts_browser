@@ -1,11 +1,14 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ResortsComponent }     from './resorts/resorts.component';
-import { SheetjsComponent }     from './sheetjs/sheetjs.component';
+import { NgModule }               from '@angular/core';
+import { RouterModule, Routes }   from '@angular/router';
+import { ResortsComponent }       from './resorts/resorts.component';
+import { ResortDetailComponent }  from './resort-detail/resort-detail.component';
+import { SheetjsComponent }       from './sheetjs/sheetjs.component';
 
 const routes: Routes = [
-  { path: 'resorts', component: ResortsComponent }
-  { path: 'data', component: SheetjsComponent }
+  // { path: '', redirectTo: '/data', pathMatch: 'full'},
+  { path: 'data', component: SheetjsComponent },
+  { path: 'resorts', component: ResortsComponent },
+  { path: 'resorts/:id', component: ResortDetailComponent }
 ];
 
 @NgModule({

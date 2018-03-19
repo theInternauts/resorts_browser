@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Resort } from '../resort';
+import { Component, OnInit}   from '@angular/core';
+import { ActivatedRoute }             from '@angular/router';
+import { Location }                   from '@angular/common';
+import { ResortService }              from '../resort.service';
+import { Resort }                     from '../resort';
 
 @Component({
   selector: 'app-resort-detail',
@@ -7,11 +10,25 @@ import { Resort } from '../resort';
   styleUrls: ['./resort-detail.component.css']
 })
 export class ResortDetailComponent implements OnInit {
-  @Input() resort: Resort;
+  // @Input() resort: Resort;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private resortService: ResortService,
+    private location: Location
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getResort();
+  }
+
+  getResort(): void {
+    const id: number = +this.route.snapshot.paramMap.get('id');
+    this.resortService.getResort(id).subscribe(resort => this.resort = resort);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

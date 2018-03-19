@@ -8,7 +8,6 @@ import { ResortService } from '../resort.service';
   styleUrls: ['./resorts.component.css']
 })
 export class ResortsComponent implements OnInit {
-  selectedResort: Resort;
   resorts: Resort[];
 
   constructor(private resortService: ResortService) {
@@ -21,13 +20,4 @@ export class ResortsComponent implements OnInit {
   getResorts(): void {
     this.resortService.getResorts().subscribe(resorts => this.resorts = resorts);
   }
-
-  onSelect(resort: Resort): void {
-    this.selectedResort = resort;
-  }
-
-  isSelected(resort): boolean {
-    return resort === this.selectedResort;
-  }
-
 }

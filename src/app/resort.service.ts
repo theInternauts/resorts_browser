@@ -14,4 +14,9 @@ export class ResortService {
     this.messageService.add('ResortService: fetched resorts');
     return of(RESORTS);
   }
+
+  getResort(id: number): Observable<Resort> {
+    this.messageService.add(`ResortService: fetched resort id=${id}`);
+    return of(RESORTS.find(resort => resort.id === id));
+  }
 }

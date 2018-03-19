@@ -1,8 +1,3 @@
-<nav>
-  <ul>
-    <li><button (click)="goBack()">go back</button></li>
-  </ul>
-</nav>
 <div *ngIf="resort">
   <h2>{{ resort.name | uppercase }} Details</h2>
   <div><span>id: </span>{{resort.id}}</div>
@@ -15,7 +10,4 @@
   <img src="{{resort.logo_url}}" />
   <p>Trail Map</p>
   <img src="{{resort.trail_map_url}}" />
-</div>
-<div *ngIf="!resort">
-  <h3>Resort Not Found</h3>
 </div>

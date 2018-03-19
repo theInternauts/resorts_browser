@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Resort } from '../resort';
-import { ResortService } from '../resort.service';
+import { Component, OnInit, Input }   from '@angular/core';
+import { Resort }                     from '../resort';
+import { ResortService }              from '../resort.service';
 
 @Component({
   selector: 'app-resorts',
@@ -8,16 +8,26 @@ import { ResortService } from '../resort.service';
   styleUrls: ['./resorts.component.css']
 })
 export class ResortsComponent implements OnInit {
-  resorts: Resort[];
+  @Input() resorts: Resort[];
+  selectedResort: Resort;
+  // resorts: Resort[];
 
   constructor(private resortService: ResortService) {
   }
 
   ngOnInit() {
-    this.getResorts();
+    // this.getResorts();
+  }
+
+  onSelect(resort: Resort): void {
+    this.selectedResort = resort;
+  }
+
+  isSelected(resort): boolean {
+    return (resort === this.selectedResort);
   }
 
   getResorts(): void {
-    this.resortService.getResorts().subscribe(resorts => this.resorts = resorts);
+    this.resorts = this.resortService.getResorts();
   }
 }

@@ -2,6 +2,7 @@
 <div>
   <input type="file" (change)="onFileChange($event)" multiple="false" /><span *ngIf="data">&nbsp;&mdash;&nbsp;<button (click)="export()">Export!</button>&nbsp;&mdash;&nbsp;</span>
 </div>
+<app-resorts [resorts]="listing"></app-resorts>
 <div *ngIf="data">
   <table class="sjs-table">
     <tr *ngFor="let row of data">

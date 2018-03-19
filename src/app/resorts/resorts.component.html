@@ -1,8 +1,21 @@
-<h2>My Resorts</h2>
-<ul class="resorts">
-	<li *ngFor="let resort of resorts">
-    <a routerLink="/resorts/{{resort.id}}">
+<div *ngIf="resorts">
+  <h2>My Resorts</h2>
+  <p>list A</p>
+  <ul class="resorts">
+    <li *ngFor="let resort of resorts"
+    [class.selected]="isSelected(resort)"
+    (click)="onSelect(resort)">
       <span class="badge">{{resort.name}} | id: {{resort.id}}</span>
-    </a>
-  </li>
-</ul>
+    </li>
+  </ul>
+  <app-resort-detail [resort]="selectedResort"></app-resort-detail>
+  <p>list B</p>
+  <ul class="resorts">
+    <li *ngFor="let resort of resorts"
+    [class.selected]="isSelected(resort)"
+    (click)="onSelect(resort)">
+      <span>{{val}}</span><br/>-
+      <span class="badge">{{resort.name}} | id: {{resort.id}}</span>
+    </li>
+  </ul>
+</div>

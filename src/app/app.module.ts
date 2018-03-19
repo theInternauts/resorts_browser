@@ -10,9 +10,8 @@ import { ResortsComponent } from './resorts/resorts.component';
 import { ResortDetailComponent } from './resort-detail/resort-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 
-import { AppRoutingModule } from './/app-routing.module';
 import { SheetjsComponent } from './sheetjs/sheetjs.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({

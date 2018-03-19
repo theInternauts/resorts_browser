@@ -1,4 +1,4 @@
-import { Component, OnInit}   from '@angular/core';
+import { Component, OnInit, Input }   from '@angular/core';
 import { ActivatedRoute }             from '@angular/router';
 import { Location }                   from '@angular/common';
 import { ResortService }              from '../resort.service';
@@ -10,7 +10,7 @@ import { Resort }                     from '../resort';
   styleUrls: ['./resort-detail.component.css']
 })
 export class ResortDetailComponent implements OnInit {
-  // @Input() resort: Resort;
+  @Input() resort: Resort;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,12 +19,12 @@ export class ResortDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getResort();
+    // this.getResort();
   }
 
   getResort(): void {
     const id: number = +this.route.snapshot.paramMap.get('id');
-    this.resortService.getResort(id).subscribe(resort => this.resort = resort);
+    this.resort = this.resortService.getResort(id);
   }
 
   goBack(): void {

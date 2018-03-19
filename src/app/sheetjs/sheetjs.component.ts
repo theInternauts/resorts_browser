@@ -1,6 +1,8 @@
 /* Adapted almost verbatum from https://github.com/SheetJS/js-xlsx/blob/master/demos/angular2/src/app/sheetjs.component.ts */
-import { Component, OnInit } from '@angular/core';
-import * as XLSX from 'xlsx';
+import { Component, OnInit }    from '@angular/core';
+import * as XLSX                from 'xlsx';
+import { Resort }               from '../resort';
+import { ResortService }        from '../resort.service';
 
 type AOA = any[][];
 
@@ -11,10 +13,11 @@ type AOA = any[][];
 })
 export class SheetjsComponent implements OnInit {
   data: AOA;
+  listing: Report[];
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
   fileName: string = 'SheetJS.xlsx';
 
-  constructor() { }
+  constructor(private resortService: ResortService) { }
 
   ngOnInit() { }
 
@@ -33,7 +36,22 @@ export class SheetjsComponent implements OnInit {
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
 
       /* save data */
-      this.data = <AOA>(XLSX.utils.sheet_to_json(ws, {header: 1}));
+      let raw_AOA = <AOA>(XLSX.utils.sheet_to_json(ws, {header: 1}));
+      let counter: number = 0;
+      let keys = [];
+      raw_AOA.map(function(r){
+        if(counter == 0){
+          r.unshift("ID");
+          keys = r;
+        } else {
+          r.unshift(`${counter}`);
+        }
+        counter++;
+      });
+
+      this.resortService.setResorts(raw_AOA);
+      this.data = raw_AOA;
+      this.setListing();
     };
     reader.readAsBinaryString(target.files[0]);
   }
@@ -48,5 +66,27 @@ export class SheetjsComponent implements OnInit {
 
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
+  }
+
+  convertToResorts(data: any): Resort[] {
+    return data.map(function(r, index){
+      if(r[0] !== "ID" && r[1] !== "NAME") {
+        // console.log("convert: ", r, index);
+        return new Resort(r);
+      } else {
+        // first row is the header
+        return r;
+      }
+    });
+  }
+
+  setListing(): void {
+    let data_no_header = this.data.slice(1);
+    // console.log("pre-listing: ", this.listing);
+    console.log("cast-listing: ", data_no_header);
+
+    this.listing = this.resortService.convertToResorts(data_no_header);
+    console.log("data: ", this.data);
+    console.log("post-listing: ", this.listing);
   }
 }

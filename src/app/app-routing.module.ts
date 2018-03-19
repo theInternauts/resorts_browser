@@ -5,10 +5,11 @@ import { ResortDetailComponent }  from './resort-detail/resort-detail.component'
 import { SheetjsComponent }       from './sheetjs/sheetjs.component';
 
 const routes: Routes = [
+  { path: '', component: SheetjsComponent }
   // { path: '', redirectTo: '/data', pathMatch: 'full'},
-  { path: 'data', component: SheetjsComponent },
-  { path: 'resorts', component: ResortsComponent },
-  { path: 'resorts/:id', component: ResortDetailComponent }
+  // { path: 'data', component: SheetjsComponent },
+  // { path: 'resorts', component: ResortsComponent },
+  // { path: 'resorts/:id', component: ResortDetailComponent }
 ];
 
 @NgModule({

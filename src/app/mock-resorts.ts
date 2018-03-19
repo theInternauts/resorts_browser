@@ -5,7 +5,7 @@ export const RESORTS: Resort[] = [
     id: 1,
     name: 'Kirkwood',
     url: 'https://www.kirkwood.com',
-    trial_map_url: 'https://s3.onthesnow.com/images/trailmaps/lake-tahoe/kirkwood/20150217131346/xlarge.jpg',
+    trail_map_url: 'https://s3.onthesnow.com/images/trailmaps/lake-tahoe/kirkwood/20150217131346/xlarge.jpg',
     logo_url:  'https://yt3.ggpht.com/--2DN8P7nP08/AAAAAAAAAAI/AAAAAAAAAAA/U5IJAG9ZY74/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg',
     address: '1501 Kirkwood Meadows Drive Kirkwood CA 95646',
     phone: '209.258.6000',

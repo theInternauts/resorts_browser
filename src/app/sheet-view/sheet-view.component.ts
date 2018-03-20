@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input }   from '@angular/core';
+import { ResortService }  from '../resort.service';
 
 type AOA = any[][];
 
@@ -11,9 +12,10 @@ export class SheetViewComponent implements OnInit {
   @Input() data: AOA;
   @Input() activeSection: string;
 
-  constructor() { }
+  constructor(private resortService: ResortService) { }
 
-  ngOnInit() {
+  ngOnChanges(): void {
+    this.data = this.resortService.getData();
   }
 
   isActiveSection(sectionName: string): boolean {

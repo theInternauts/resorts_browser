@@ -25,7 +25,12 @@ export class SheetjsComponent implements OnInit {
     private messageService: MessageService
   ) { }
 
-  ngOnInit() { }
+  // ngOnInit() { }
+
+  ngOnChanges(): void {
+    this.data = this.resortService.getData();
+    this.resorts = this.resortService.getResorts();
+  }
 
   onFileChange(evt: any) {
     /* wire up file reader */

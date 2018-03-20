@@ -22,6 +22,10 @@ export class ResortsComponent implements OnInit {
     // this.getResorts();
   }
 
+  ngOnChanges(): void {
+    this.resorts = this.resortService.getResorts();
+  }
+
   onSelect(resort: Resort): void {
     this.selectedResort = resort;
   }

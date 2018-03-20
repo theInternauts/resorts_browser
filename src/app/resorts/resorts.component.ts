@@ -12,7 +12,6 @@ export class ResortsComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() activeSection: string;
   selectedResort: Resort;
-  // resorts: Resort[];
 
   constructor(
     private resortService: ResortService,

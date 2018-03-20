@@ -13,7 +13,7 @@
         <li><a [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')">Full Map</a></li>
       </ul>
       <div class="data-upload-links-container inline-three">
-        <app-sheetjs></app-sheetjs>
+        <app-sheetjs [data]="data"></app-sheetjs>
       </div>
     </nav>
   </header>

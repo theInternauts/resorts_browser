@@ -14,7 +14,7 @@ type AOA = any[][];
 })
 export class SheetjsComponent implements OnInit {
   @Input() resorts: Report[];
-  private data: AOA;
+  @Input() data: AOA;
   private headers: string[];
 
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
@@ -55,16 +55,17 @@ export class SheetjsComponent implements OnInit {
         counter++;
       });
 
+      this.resortService.setData(raw_AOA);
       this.resortService.setResorts(raw_AOA);
-      this.data = raw_AOA;
-      this.setListing();
+      // this.data = raw_AOA;
+      // this.setListing();
     };
     reader.readAsBinaryString(target.files[0]);
   }
 
   export(): void {
     /* generate worksheet */
-    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
+    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.resortService.getData());
 
     /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
@@ -74,25 +75,25 @@ export class SheetjsComponent implements OnInit {
     XLSX.writeFile(wb, this.fileName);
   }
 
-  convertToResorts(data: any): Resort[] {
-    return data.map(function(r, index){
-      if(r[0] !== "ID" && r[1] !== "NAME") {
-        // console.log("convert: ", r, index);
-        return new Resort(r);
-      } else {
-        // first row is the header
-        return r;
-      }
-    });
-  }
+  // convertToResorts(data: any): Resort[] {
+  //   return data.map(function(r, index){
+  //     if(r[0] !== "ID" && r[1] !== "NAME") {
+  //       // console.log("convert: ", r, index);
+  //       return new Resort(r);
+  //     } else {
+  //       // first row is the header
+  //       return r;
+  //     }
+  //   });
+  // }
 
-  setListing(): void {
-    let data_no_header = this.data.slice(1);
-    // console.log("pre-listing: ", this.listing);
-    console.log("cast-listing: ", data_no_header);
+  // setListing(): void {
+  //   let data_no_header = this.data.slice(1);
+  //   // console.log("pre-listing: ", this.listing);
+  //   console.log("cast-listing: ", data_no_header);
 
-    this.listing = this.resortService.convertToResorts(data_no_header);
-    console.log("data: ", this.data);
-    console.log("post-listing: ", this.listing);
-  }
+  //   this.listing = this.resortService.convertToResorts(data_no_header);
+  //   console.log("data: ", this.data);
+  //   console.log("post-listing: ", this.listing);
+  // }
 }

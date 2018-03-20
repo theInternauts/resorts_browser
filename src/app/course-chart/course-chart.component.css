@@ -1,0 +1,29 @@
+.selected {
+  background: #ccc;
+  font-weight: bold;
+}
+.column img {
+  width: 100%;
+}
+.column {
+  display: inline-block;
+  height: 100%;
+  outline: 1px solid red;
+  vertical-align: top;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding:10px 5px;
+  margin:0;
+}
+.column.left {
+  width: 40%;
+}
+.column.right {
+  width: 59%;
+}
+.clearfix:after {
+  content:" ";
+  display:table;
+  clear:both;
+}

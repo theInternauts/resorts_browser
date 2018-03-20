@@ -1,8 +1,7 @@
-<div class="clearfix">
-  <div class="column left">
-    <div *ngIf="resorts && isActiveSection('RESORTS')">
+<div *ngIf="resorts && isActiveSection('RESORTS')">
+  <div class="clearfix">
+    <div class="column left">
       <h2>My Resorts</h2>
-      <p>list A</p>
       <ul class="resorts">
         <li *ngFor="let resort of resorts"
         [class.selected]="isSelected(resort)"
@@ -11,8 +10,8 @@
         </li>
       </ul>
     </div>
-  </div>
-  <div class="column right">
-    <app-resort-detail [resort]="selectedResort" [activeSection]="activeSection"></app-resort-detail>
+    <div class="column right">
+      <app-resort-detail [resort]="selectedResort"></app-resort-detail>
+    </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ export class ResortsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getResorts();
+    // this.getResorts();
   }
 
   onSelect(resort: Resort): void {

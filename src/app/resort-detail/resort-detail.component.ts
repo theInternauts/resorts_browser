@@ -11,6 +11,7 @@ import { Resort }                     from '../resort';
 })
 export class ResortDetailComponent implements OnInit {
   @Input() resort: Resort;
+  @Input() activeSection: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,10 @@ export class ResortDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  isActiveSection(sectionName: string): boolean {
+    return (this.activeSection == sectionName);
   }
 
 }

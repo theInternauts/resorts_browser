@@ -1,0 +1,23 @@
+.column {
+  display: inline-block;
+  height: 100%;
+  outline: 1px solid red;
+  vertical-align: top;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: content-box;
+}
+.column.left {
+  width: 40%;
+}
+.column.right {
+  width: 60%;
+}
+.clearfix:after {
+  content:" ";
+  display:table;
+  clear:both;
+}
+.column img {
+  width: 100%;
+}

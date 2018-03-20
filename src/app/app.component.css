@@ -1,0 +1,43 @@
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.HolyGrail-nav {
+  order: -1;
+}
+header,
+footer,
+.HolyGrail-body {
+  outline: 1px solid red;
+}
+.attribution {
+  text-align: right;
+}
+.data-upload-links-container,
+.nav-links,
+.data-upload-links,
+.nav-links li,
+.data-upload-links li {
+  display: inline-block;
+}
+.nav-links a,
+.data-upload-links a {
+  text-align: center;
+  padding: 10px 5px;
+}
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}

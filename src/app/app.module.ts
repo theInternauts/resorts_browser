@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 import { ResortService } from './resort.service';
 import { MessageService } from './message.service';
+import { SheetJsService } from './sheet-js.service';
 
 import { AppComponent } from './app.component';
 import { ResortsComponent } from './resorts/resorts.component';
 import { ResortDetailComponent } from './resort-detail/resort-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-
 import { SheetjsComponent } from './sheetjs/sheetjs.component';
-import { AppRoutingModule } from './app-routing.module';
+import { SheetViewComponent } from './sheet-view/sheet-view.component';
+import { CourseChartComponent } from './course-chart/course-chart.component';
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { AppRoutingModule } from './app-routing.module';
     ResortsComponent,
     ResortDetailComponent,
     MessagesComponent,
-    SheetjsComponent
+    SheetjsComponent,
+    SheetViewComponent,
+    CourseChartComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     ResortService,
-    MessageService
+    MessageService,
+    SheetJsService
   ],
   bootstrap: [AppComponent]
 })

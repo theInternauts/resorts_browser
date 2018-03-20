@@ -1,15 +1,11 @@
-<p>Choose a data file</p>
-<div>
+<div class="clearfix">
+  <p>Choose a data file</p>
   <input type="file" (change)="onFileChange($event)" multiple="false" /><span *ngIf="data">&nbsp;&mdash;&nbsp;<button (click)="export()">Export!</button>&nbsp;&mdash;&nbsp;</span>
 </div>
-<app-resorts [resorts]="listing"></app-resorts>
-<div *ngIf="data">
-  <table class="sjs-table">
-    <tr *ngFor="let row of data">
-      <td *ngFor="let val of row">
-        {{val}}
-      </td>
-    </tr>
-  </table>
 
-</div>
+
+
+        <ul class="data-upload-links">
+          <li><a href="#">Upload</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>

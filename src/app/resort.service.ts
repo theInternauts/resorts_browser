@@ -26,10 +26,11 @@ export class ResortService {
     console.log("incoming: ", data);
     console.log("cast?: ", this.convertToResorts(data));
     this.resorts = this.convertToResorts(data);
-    // this.resorts = this.data;
+    this.messageService.add(`ResortService: casted and set resorts`);
   }
 
   convertToResorts(data: any): Resort[] {
+    this.messageService.add(`ResortService: converting`);
     return data.map(function(r, index){
       if(r[0] !== "ID" && r[1] !== "NAME") {
         // console.log("convert: ", r, index);

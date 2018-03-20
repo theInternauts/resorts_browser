@@ -1,4 +1,4 @@
-<div *ngIf="resort">
+<div *ngIf="resort && isActiveSection('RESORTS')">
   <h2>{{ resort.name | uppercase }} Details</h2>
   <div><span>id: </span>{{resort.id}}</div>
   <div>

@@ -1,8 +1,9 @@
 /* Adapted almost verbatum from https://github.com/SheetJS/js-xlsx/blob/master/demos/angular2/src/app/sheetjs.component.ts */
-import { Component, OnInit }    from '@angular/core';
+import { Component, OnInit, Input }    from '@angular/core';
 import * as XLSX                from 'xlsx';
 import { Resort }               from '../resort';
 import { ResortService }        from '../resort.service';
+import { MessageService }       from '../message.service';
 
 type AOA = any[][];
 
@@ -12,12 +13,17 @@ type AOA = any[][];
   styleUrls: ['./sheetjs.component.css']
 })
 export class SheetjsComponent implements OnInit {
-  data: AOA;
-  listing: Report[];
+  @Input() resorts: Report[];
+  private data: AOA;
+  private headers: string[];
+
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
   fileName: string = 'SheetJS.xlsx';
 
-  constructor(private resortService: ResortService) { }
+  constructor(
+    private resortService: ResortService,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit() { }
 

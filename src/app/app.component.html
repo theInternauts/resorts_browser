@@ -1,16 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-<!--   <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/data">Data</a>
-    <a routerLink="/resorts">Resorts</a>
-  </nav> -->
+<div class="HolyGrail">
+  <header>
+    <h1>
+      {{ title }}
+    </h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a (click)="setActiveSection('HOME')"><span>Home</span></a></li>
+        <li><a (click)="setActiveSection('DATA')">Uploaded Data</a></li>
+        <li><a (click)="setActiveSection('RESORTS')">Resorts</a></li>
+        <li><a (click)="setActiveSection('COURSE_CHART')">Course Data</a></li>
+        <li><a (click)="setActiveSection('FULL_MAP')">Full Map</a></li>
+      </ul>
+      <div class="data-upload-links-container">
+        <app-sheetjs></app-sheetjs>
+      </div>
+    </nav>
+  </header>
+  <div class="HolyGrail-body">
+    <main class="HolyGrail-content">
+      <app-resorts [resorts]="resorts" [activeSection]="activeSection"></app-resorts>
+      <app-sheet-view [data]="data" [activeSection]="activeSection"></app-sheet-view>
+      <!-- <router-outlet></router-outlet> -->
+    </main>
+    <nav class="HolyGrail-nav">
+      <app-messages></app-messages>
+    </nav>
+    <aside class="HolyGrail-ads">
+    </aside>
+  </div>
+  <footer><p class="attribution">Made with Angular 5 by Cricket Wallace</p></footer>
 </div>
-<hr />
-
-<router-outlet></router-outlet>
-<hr />
-<app-messages></app-messages>

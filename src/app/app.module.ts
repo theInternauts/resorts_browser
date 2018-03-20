@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 
 import { ResortService } from './resort.service';
 import { MessageService } from './message.service';
@@ -29,8 +28,7 @@ import { CourseChartComponent } from './course-chart/course-chart.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [
     ResortService,

@@ -1,11 +1,9 @@
-<div class="clearfix">
-  <p>Choose a data file</p>
-  <input type="file" (change)="onFileChange($event)" multiple="false" /><span *ngIf="data">&nbsp;&mdash;&nbsp;<button (click)="export()">Export!</button>&nbsp;&mdash;&nbsp;</span>
-</div>
-
-
-
-        <ul class="data-upload-links">
-          <li><a href="#">Upload</a></li>
-          <li><a href="#">Export</a></li>
-        </ul>
+<ul class="data-upload-links">
+  <li>
+    <div>Choose a data file</div>
+    <input type="file" (change)="onFileChange($event)" multiple="false" />
+  </li>
+  <li *ngIf="data">
+    <button (click)="export()">Export!</button>
+  </li>
+</ul>

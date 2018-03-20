@@ -36,4 +36,8 @@ export class AppComponent implements OnInit {
       this.activeSection = sectionName);
     }
   }
+
+  isActiveSection(sectionName: string): boolean {
+    return (this.activeSection == sectionName);
+  }
 }

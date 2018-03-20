@@ -1,23 +1,15 @@
-.column {
+.data-upload-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.data-upload-links,
+.data-upload-links li {
   display: inline-block;
-  height: 100%;
-  outline: 1px solid red;
-  vertical-align: top;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  box-sizing: content-box;
 }
-.column.left {
-  width: 40%;
-}
-.column.right {
-  width: 60%;
-}
-.clearfix:after {
-  content:" ";
-  display:table;
-  clear:both;
-}
-.column img {
-  width: 100%;
+.data-upload-links a {
+  padding: 10px 5px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
 }

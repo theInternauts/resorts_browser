@@ -1,18 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="HolyGrail">
   <header>
-    <h1>
+    <h1 class="inline-three header-title">
       {{ title }}
     </h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a (click)="setActiveSection('HOME')"><span>Home</span></a></li>
-        <li><a (click)="setActiveSection('DATA')">Uploaded Data</a></li>
-        <li><a (click)="setActiveSection('RESORTS')">Resorts</a></li>
-        <li><a (click)="setActiveSection('COURSE_CHART')">Course Data</a></li>
-        <li><a (click)="setActiveSection('FULL_MAP')">Full Map</a></li>
+    <nav class="clearfix inline-three">
+      <ul class="nav-links inline-three">
+        <li><a [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><span>Home</span></a></li>
+        <li><a [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')">Uploaded Data</a></li>
+        <li><a [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')">Resorts</a></li>
+        <li><a [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')">Course Data</a></li>
+        <li><a [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')">Full Map</a></li>
       </ul>
-      <div class="data-upload-links-container">
+      <div class="data-upload-links-container inline-three">
         <app-sheetjs></app-sheetjs>
       </div>
     </nav>

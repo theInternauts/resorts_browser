@@ -37,18 +37,21 @@
       <div class="ct" id="t3">
         <div class="ct" id="t4">
           <section>
-            <ul>
-              <a href="#t0" [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><fa name="fa-home" class="icon fa fa-home" id="cero">HOME</fa></a>
-              <a href="#t1" [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno">Uploaded Data</fa></a>
-              <a href="#t2" [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos">Resorts</fa></a>
-              <a href="#t3" [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres">Course Data</fa></a>
-              <a href="#t4" [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')"><fa name="fa-map-o" class="icon fa fa-map-o" id="cuatro">Full Map</fa></a>
+            <ul class="main-nav-list">
+              <a href="#t0" [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a>
+              <a href="#t1" [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a>
+              <a href="#t2" [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a>
+              <a href="#t3" [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a>
+              <a href="#t4" [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')"><fa name="fa-map-o" class="icon fa fa-map-o" id="cuatro"></fa><span>Map</span></a>
             </ul>
             <div class="page" id="p0">
               <span class="late-slider">
                 <h1 class="title">
                   {{ title }}
                 </h1>
+                <div class="data-upload-links-container inline-three">
+                  <app-sheetjs [data]="data"></app-sheetjs>
+                </div>
               </span>
               <p class="credit"> Original Pen by <a href="https://codepen.io/hrtzt/">Alberto Hartzet</a></p>
             </div>

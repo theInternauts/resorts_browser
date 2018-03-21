@@ -136,9 +136,11 @@ html {
 .scroll-zone-container .scroll-zone {
   overflow-x: hidden;
   overflow-y: scroll;
+  height: 100%;
 }
 .scroll-zone-container .scroll-zone.allow-x-scroll {
   overflow-x: scroll;
+  width: 100%;
 }
 .column {
   display: inline-block;

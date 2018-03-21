@@ -73,9 +73,13 @@ footer,
 
 
 /******/
-fa,
-.icon {
-  color: #fff !important;
+.main-nav-list fa,
+.main-nav-list a {
+  color: #fff;
+}
+.main-nav-list a {
+  display: block;
+  padding: 10px 0;
 }
 
 * {
@@ -206,6 +210,13 @@ ul .icon:hover {
 
 #t4:target #cuatro {
   transform: scale(1.2) !important;
+}
+
+.main-nav-list a span {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 ul {

@@ -1,9 +1,12 @@
 <ul class="data-upload-links">
   <li>
     <div>Choose a data file</div>
+    <fa name="upload"></fa>
     <input type="file" (change)="onFileChange($event)" multiple="false" />
   </li>
   <li *ngIf="data">
-    <button (click)="export()">Export!</button>
+    <button (click)="export()">
+      <fa name="download"></fa>EXPORT
+    </button>
   </li>
 </ul>

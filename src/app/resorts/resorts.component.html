@@ -1,17 +1,15 @@
-<div *ngIf="resorts && isActiveSection('RESORTS')">
-  <div class="clearfix">
-    <div class="column left">
-      <h2>My Resorts</h2>
-      <ul class="resorts">
-        <li *ngFor="let resort of resorts"
-        [class.selected]="isSelected(resort)"
-        (click)="onSelect(resort)">
-          <span class="badge">{{resort.name}} | id: {{resort.id}}</span>
-        </li>
-      </ul>
-    </div>
-    <div class="column right">
-      <app-resort-detail [resort]="selectedResort"></app-resort-detail>
-    </div>
+<div *ngIf="resorts && isActiveSection('RESORTS')" class="scroll-zone-container">
+  <div class="column left scroll-zone">
+    <h2>My Resorts</h2>
+    <ul class="resorts">
+      <li *ngFor="let resort of resorts"
+      [class.selected]="isSelected(resort)"
+      (click)="onSelect(resort)">
+        <span class="badge">{{resort.name}} | id: {{resort.id}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="column right scroll-zone">
+    <app-resort-detail [resort]="selectedResort"></app-resort-detail>
   </div>
 </div>

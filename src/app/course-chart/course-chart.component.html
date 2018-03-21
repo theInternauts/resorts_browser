@@ -1,30 +1,28 @@
-<div *ngIf="resorts && isActiveSection('COURSE_CHART')">
-  <div class="clearfix">
-    <div class="column left">
-      <h2>COURSE DATA</h2>
-      <table class="resorts course-chart">
-        <thead>
-          <th>Name</th>
-          <th># of Lifts</th>
-          <th># of Trails</th>
-          <th># of Acres</th>
-          <th>Is a Terrain Park?</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let resort of resorts"
-          [class.selected]="isSelected(resort)"
-          (click)="onSelect(resort)">
-            <td class="data-point">{{resort.name}}</td>
-            <td class="data-point">{{resort.lifts}}</td>
-            <td class="data-point">{{resort.trails}}</td>
-            <td class="data-point">{{resort.acres}}</td>
-            <td class="data-point">{{resort.terrain_park}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="column right">
-      <app-resort-detail [resort]="selectedResort"></app-resort-detail>
-    </div>
+<div *ngIf="resorts && isActiveSection('COURSE_CHART')" class="scroll-zone-container">
+  <div class="column left scroll-zone">
+    <h2>COURSE DATA</h2>
+    <table class="resorts course-chart">
+      <thead>
+        <th>Name</th>
+        <th># of Lifts</th>
+        <th># of Trails</th>
+        <th># of Acres</th>
+        <th>Is a Terrain Park?</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resort of resorts"
+        [class.selected]="isSelected(resort)"
+        (click)="onSelect(resort)">
+          <td class="data-point">{{resort.name}}</td>
+          <td class="data-point">{{resort.lifts}}</td>
+          <td class="data-point">{{resort.trails}}</td>
+          <td class="data-point">{{resort.acres}}</td>
+          <td class="data-point">{{resort.terrain_park}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column right scroll-zone">
+    <app-resort-detail [resort]="selectedResort"></app-resort-detail>
   </div>
 </div>

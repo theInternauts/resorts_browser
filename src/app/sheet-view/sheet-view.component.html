@@ -1,10 +1,8 @@
-<div class="clearfix">
-  <div *ngIf="data && isActiveSection('DATA')">
-    <table class="sjs-table">
+<div class="scroll-zone-container">
+  <div class="scroll-zone allow-x-scroll">
+    <table *ngIf="data && isActiveSection('DATA')">
       <tr *ngFor="let row of data">
-        <td *ngFor="let val of row">
-          {{val}}
-        </td>
+        <td *ngFor="let val of row">{{val}}</td>
       </tr>
     </table>
   </div>

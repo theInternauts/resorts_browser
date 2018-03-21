@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="HolyGrail">
+<!-- <div class="HolyGrail">
   <header>
     <h1 class="inline-three header-title">
       {{ title }}
@@ -30,4 +30,49 @@
     </aside>
   </div>
   <footer><p class="attribution">Made with Angular 5 by Cricket Wallace</p></footer>
+</div> -->
+<!--  -->
+<div class="ct" id="t1">
+    <div class="ct" id="t2">
+      <div class="ct" id="t3">
+        <div class="ct" id="t4">
+          <section>
+            <ul>
+              <a href="#t0" [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><fa name="fa-home" class="icon fa fa-home" id="cero">HOME</fa></a>
+              <a href="#t1" [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno">Uploaded Data</fa></a>
+              <a href="#t2" [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos">Resorts</fa></a>
+              <a href="#t3" [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres">Course Data</fa></a>
+              <a href="#t4" [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')"><fa name="fa-map-o" class="icon fa fa-map-o" id="cuatro">Full Map</fa></a>
+            </ul>
+            <div class="page" id="p0">
+              <span class="late-slider">
+                <h1 class="title">
+                  {{ title }}
+                </h1>
+              </span>
+              <p class="credit"> Original Pen by <a href="https://codepen.io/hrtzt/">Alberto Hartzet</a></p>
+            </div>
+            <div class="page" id="p1">
+              <span class="late-slider">
+                <app-sheet-view [data]="data" [activeSection]="activeSection"></app-sheet-view>
+              </span>
+            <!-- <li class="icon fa fa-home"><span class="title">Home</span><span class="hint">Like this pen to see the magic!...<br/> Just kidding, it won't happen anything but I'll be really happy If you do so.</span></li> -->
+            </div>
+            <div class="page" id="p2">
+              <span class="late-slider">
+                <app-resorts [resorts]="resorts" [activeSection]="activeSection"></app-resorts>
+              </span>
+            </div>
+            <div class="page" id="p3">
+              <span class="late-slider">
+                <app-course-chart [resorts]="resorts" [activeSection]="activeSection"></app-course-chart>
+              </span>
+            </div>
+            <div class="page" id="p4">
+              <li class="icon fa fa-dribbble"><span class="title">Dribbble</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</a></span></li>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
 </div>

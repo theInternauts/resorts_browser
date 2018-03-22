@@ -272,6 +272,9 @@ a {
   height: 100%;
   display: block;
 }
+.page .late-slider.edge-to-edge {
+  padding: 0;
+}
 .page .icon {
   position: absolute;
   top: 0;
@@ -331,7 +334,3 @@ a {
 .credit a {
   color: #fff
 }
-
-
-
-/******/

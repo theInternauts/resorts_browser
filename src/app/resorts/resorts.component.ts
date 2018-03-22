@@ -43,4 +43,13 @@ export class ResortsComponent implements OnInit {
   isActiveSection(sectionName: string): boolean {
     return (this.activeSection == sectionName);
   }
+
+  start3DScroller(): void {
+    // Call the foldscroll plugin
+    $( '.resorts.container-3d-panel-block' ).foldscroll({
+      perspective: 900,
+      margin: '220px'
+    });
+    console.log("here");
+  }
 }

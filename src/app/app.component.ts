@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
 
   setActiveSection(sectionName: string): void {
     if(SECTIONS.indexOf(sectionName) >= 0){
-      this.activeSection = sectionName);
+      this.activeSection = sectionName;
     }
   }
 

@@ -12,14 +12,17 @@ export class ResortsComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() activeSection: string;
   selectedResort: Resort;
+  has3Dintitialized: boolean;
 
   constructor(
     private resortService: ResortService,
     private messageService: MessageService
-  ) { }
+  ) {
+    this.has3Dintitialized = true;
+  }
 
   ngOnInit() {
-    // this.getResorts();
+    this.getResorts();
   }
 
   ngOnChanges(): void {
@@ -42,14 +45,5 @@ export class ResortsComponent implements OnInit {
 
   isActiveSection(sectionName: string): boolean {
     return (this.activeSection == sectionName);
-  }
-
-  start3DScroller(): void {
-    // Call the foldscroll plugin
-    $( '.resorts.container-3d-panel-block' ).foldscroll({
-      perspective: 900,
-      margin: '220px'
-    });
-    console.log("here");
   }
 }

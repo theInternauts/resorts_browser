@@ -25,7 +25,7 @@ export class SheetjsComponent implements OnInit {
     private messageService: MessageService
   ) { }
 
-  // ngOnInit() { }
+  ngOnInit() { }
 
   ngOnChanges(): void {
     this.data = this.resortService.getData();

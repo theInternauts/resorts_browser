@@ -14,6 +14,8 @@ export class SheetViewComponent implements OnInit {
 
   constructor(private resortService: ResortService) { }
 
+  ngOnInit(): void {}
+
   ngOnChanges(): void {
     this.data = this.resortService.getData();
   }

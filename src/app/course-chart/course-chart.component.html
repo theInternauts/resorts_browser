@@ -1,28 +1,9 @@
 <div *ngIf="resorts && isActiveSection('COURSE_CHART')" class="scroll-zone-container">
-  <div class="column left scroll-zone">
-    <h2>COURSE DATA</h2>
-    <table class="resorts course-chart">
-      <thead>
-        <th>Name</th>
-        <th># of Lifts</th>
-        <th># of Trails</th>
-        <th># of Acres</th>
-        <th>Is a Terrain Park?</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let resort of resorts"
-        [class.selected]="isSelected(resort)"
-        (click)="onSelect(resort)">
-          <td class="data-point">{{resort.name}}</td>
-          <td class="data-point">{{resort.lifts}}</td>
-          <td class="data-point">{{resort.trails}}</td>
-          <td class="data-point">{{resort.acres}}</td>
-          <td class="data-point">{{resort.terrain_park}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="column right scroll-zone">
-    <app-resort-detail [resort]="selectedResort"></app-resort-detail>
+  <h2 class="title">COURSE DATA</h2>
+  <div class="scroll-zone" style="width:100%;">
+    <div class="course-chart">
+      <div id="chart_div_0" class="charts"></div>
+      <div id="chart_div_1" class="charts"></div>
+    </div>
   </div>
 </div>

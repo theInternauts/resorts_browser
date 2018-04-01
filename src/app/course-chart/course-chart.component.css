@@ -5,3 +5,29 @@
 .column img {
   width: 100%;
 }
+.course-chart {
+  padding: 20px;
+  width: 100%;
+}
+.course-chart .charts {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  height: 300px;
+}
+.course-chart rect {
+  fill: transparent;
+  stroke: transparent;
+}
+.course-chart #chart_div_0 path {
+  fill: #3498db;
+  stroke: #3498db;
+}
+.course-chart #chart_div_1 path {
+  fill: #259AA3;
+  stroke: #259AA3;
+}
+.course-chart #chart_div_2 path {
+  fill: #00DFFC;
+  stroke: #00DFFC;
+}

@@ -67,8 +67,16 @@ export class CourseChartComponent implements OnInit {
     // this.updateCharts(); (using recently updated & formatted data)
     // may need debouncing
     if (this.isChartInitialized) {
-      this.updatePlotlyCharts();
+      // this.updatePlotlyCharts();
     }
+  }
+
+  update(): void {
+    this.data = this.buildAndReturnDataSet();
+  }
+
+  getData(): any[] {
+    return this.data;
   }
 
   ngAfterViewInit(): void {
@@ -76,13 +84,14 @@ export class CourseChartComponent implements OnInit {
   }
 
   ngAfterViewChecked(): void {
+    // this.data = this.buildAndReturnDataSet();
     console.log("COURSE_CHART:ngAfterViewChecked");
     // this.updateCharts();
     // unless flag true init/update chart and set flag to true
     if (!this.isChartInitialized) {
       // this.loadGoogleCharts();
-      this.charts = this.loadPlotlyCharts();
-      this.isChartInitialized = true;
+      // this.charts = this.loadPlotlyCharts();
+      // this.isChartInitialized = true;
     }
   }
 
@@ -133,6 +142,6 @@ export class CourseChartComponent implements OnInit {
 
   updatePlotlyCharts(): void {
     console.log("updating Plotly Charts");
-    this.charts = this.loadPlotlyCharts();
+    // this.charts = this.loadPlotlyCharts();
   }
 }

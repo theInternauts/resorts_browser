@@ -1,9 +1,9 @@
-<div *ngIf="resorts && isActiveSection('COURSE_CHART')" class="scroll-zone-container">
+<div *ngIf="resorts && isActiveSection('COURSE_CHART')">
   <h2 class="title">COURSE DATA</h2>
-  <div class="scroll-zone" style="width:100%;">
-    <div class="course-chart">
-      <div id="chart_div_0" class="charts"></div>
-      <div id="chart_div_1" class="charts"></div>
+  <button (click)="update()">UPDATE</button>
+  <div class="scroll-zone-container" style="max-height: 100%;">
+    <div class="scroll-zone">
+      <app-course-chart-detail [data]="data"></app-course-chart-detail>
     </div>
   </div>
 </div>

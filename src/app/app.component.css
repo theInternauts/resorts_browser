@@ -274,6 +274,7 @@ a {
 }
 .page .late-slider.edge-to-edge {
   padding: 0;
+  width: 90%;
 }
 .page .icon {
   position: absolute;

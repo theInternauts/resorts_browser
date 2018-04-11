@@ -1,3 +1,6 @@
+.scroll-zone {
+  padding-bottom: 65px;
+}
 .selected {
   background: #ccc;
   font-weight: bold;

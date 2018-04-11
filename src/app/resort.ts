@@ -39,7 +39,7 @@ export class Resort {
   //   this.acres = acres;
   //   this.terrain_park = terrain_park;
   // }
-  constructor (args: Array){
+  constructor (args: any[]){
     this.id = args[0];
     this.name = args[1];
     this.url = args[2];

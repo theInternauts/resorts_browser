@@ -1,4 +1,4 @@
-export const SECTIONS:string = [
+export const SECTIONS: string[] = [
   "HOME",
   "DATA",
   "RESORTS",

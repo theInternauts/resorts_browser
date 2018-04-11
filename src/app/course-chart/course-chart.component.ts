@@ -10,12 +10,14 @@ import { ResortService }              from '../resort.service';
 export class CourseChartComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() activeSection: string;
-  charts: Array<any>;
+  // charts: Array<any>; //delete me when i delete Plotly functions later on
+  data: any[];
   isChartInitialized: boolean;
 
   constructor(private resortService: ResortService) {
     this.isChartInitialized = false;
-    this.charts = [];
+    this.data = [];
+    // this.charts = [];
     /*
     this issue is that I need an event or set of logic that fires after the section has been triggered.  the google charts need to initialized and loaded AFTER we switch to this panel/section.  There's no known event for that.  ngOnInit() may not be goo becasue I'm not using an router....  (maybe)
     */
@@ -26,6 +28,35 @@ export class CourseChartComponent implements OnInit {
     this.getResorts();
     // call function to format data?
 
+  }
+
+  buildAndReturnDataSet(): any[] {
+    let courses = ["Kirkwood", "Sierra at Tahoe", "Heavenly Mountain Resort", "Squaw Valley", "Northstar California", "Homewood Mountain Resort", "Donner Ski Ranch", "Soda Springs", "Sugar Bowl"];
+    let data_trails = {
+      x: courses,
+      y: [86, 46, 94, 170, 100, 67, 52, 5, 98],
+      name: 'TRAILS',
+      type: 'bar'
+    };
+
+    let data_lifts = {
+      x: courses,
+      y: [15, 14, 27, 29, 20, 8, 6, 2, 12],
+      name: 'LIFTS',
+      type: 'bar'
+    };
+
+    let data_acres = {
+      x: courses,
+      y: [2300, 2000, 4630, 3600, 3170, 1260, 500, 300, 1650],
+      name: 'ACRES',
+      type: 'bar'
+    };
+
+    let data_0 = [data_trails, data_lifts];
+    let data_1 = [data_acres];
+
+    return [data_0, data_1];
   }
 
   ngOnChanges(): void {
@@ -66,7 +97,7 @@ export class CourseChartComponent implements OnInit {
     return (this.activeSection == sectionName);
   }
 
-  loadPlotlyCharts(): Array<any> {
+  loadPlotlyCharts(): any[] {
     console.log("charting.....");
     let courses = ["Kirkwood", "Sierra at Tahoe", "Heavenly Mountain Resort", "Squaw Valley", "Northstar California", "Homewood Mountain Resort", "Donner Ski Ranch", "Soda Springs", "Sugar Bowl"];
     let data_trails = {

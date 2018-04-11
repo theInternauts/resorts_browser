@@ -12,33 +12,6 @@ export class Resort {
   acres: number;
   terrain_park: boolean;
 
-  // constructor (
-  //   id: number,
-  //   name: string,
-  //   url: string,
-  //   trail_map_url: string,
-  //   logo_url: string,
-  //   address: string,
-  //   phone: string,
-  //   hours_of_operation: string,
-  //   lifts: number,
-  //   trails: number,
-  //   acres: number,
-  //   terrain_park: boolean
-  // ){
-  //   this.id = id;
-  //   this.name = name;
-  //   this.url = url;
-  //   this.trail_map_url = trail_map_url;
-  //   this.logo_url = logo_url;
-  //   this.address = address;
-  //   this.phone = phone;
-  //   this.hours_of_operation = hours_of_operation;
-  //   this.lifts = lifts;
-  //   this.trails = trails;
-  //   this.acres = acres;
-  //   this.terrain_park = terrain_park;
-  // }
   constructor (args: any[]){
     this.id = args[0];
     this.name = args[1];

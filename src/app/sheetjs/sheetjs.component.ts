@@ -13,7 +13,7 @@ type AOA = any[][];
   styleUrls: ['./sheetjs.component.css']
 })
 export class SheetjsComponent implements OnInit {
-  @Input() resorts: Report[];
+  @Input() resorts: Resort[];
   @Input() data: AOA;
   private headers: string[];
 

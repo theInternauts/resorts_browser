@@ -6,16 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./course-chart-detail.component.css']
 })
 export class CourseChartDetailComponent {
-  @Input() isChartInitialized: boolean;
   @Input() data: any[];
-  // data: any[];
-  charts: any[];
 
-  // constructor() {
-  //   this.isChartInitialized = false;
-  //   this.charts = [];
-  //   this.data = [];
-  // }
+  charts: any[];
+  isChartInitialized: boolean;
+
+  constructor() {
+    this.isChartInitialized = false;
+    this.charts = [];
+    this.data = [];
+  }
 
   ngAfterViewChecked(): void {
     console.log("COURSE-CHART-DETAIL: ngAfterViewChecked");
@@ -27,9 +27,10 @@ export class CourseChartDetailComponent {
 
   ngOnChanges(): void {
     console.log("COURSE-CHART-DETAIL: onChange");
-    // if(this.isChartInitialized && this.charts && this.charts.length > 0 && this.data && this.data.length > 0) {
+    // semi-exhaustive check to avoid premature calls
+    if(this.isChartInitialized && this.charts && this.charts.length > 0 && this.data && this.data.length > 0) {
       this.updateCharts();
-    // }
+    }
   }
 
   loadCharts(): void {
@@ -52,6 +53,7 @@ export class CourseChartDetailComponent {
 
   updateCharts(): void {
     console.log("COURSE-CHART-DETAIL: updating charts");
+    // eventually, this update should check each chart and only update the with the updated data set
     if(this.isChartInitialized){
       this.loadCharts();
     }

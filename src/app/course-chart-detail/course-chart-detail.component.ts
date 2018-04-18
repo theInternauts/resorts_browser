@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input }           from '@angular/core';
+import { PlotlyData }                 from '../plotly-data';
 
 @Component({
   selector: 'app-course-chart-detail',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./course-chart-detail.component.css']
 })
 export class CourseChartDetailComponent {
-  @Input() data: any[];
+  @Input() data: PlotlyData[];
 
   charts: any[];
   isChartInitialized: boolean;

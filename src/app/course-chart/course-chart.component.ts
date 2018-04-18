@@ -1,5 +1,6 @@
 import { Component, OnInit, Input }   from '@angular/core';
 import { Resort }                     from '../resort';
+import { PlotlyData }                 from '../plotly-data';
 import { ResortService }              from '../resort.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CourseChartComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() activeSection: string;
 
-  data: any[];
+  data: PlotlyData[];
 
   constructor(private resortService: ResortService) {
     this.data = [];
@@ -29,16 +30,16 @@ export class CourseChartComponent implements OnInit {
   setDataFromResorts(): void {
     console.log("COURSE_CHART:setDataFromResorts");
     let courses = [];
-    let data_trails = {x: courses, y: [], name: 'TRAILS', type: 'bar'};
-    let data_lifts = {x: courses, y: [], name: 'LIFTS', type: 'bar'};
-    let data_acres = {x: courses, y: [], name: 'ACRES', type: 'bar'};
+    let data_trails = new PlotlyData({x: [], y: [], name: 'TRAILS', type: 'bar'});
+    let data_lifts = new PlotlyData({x: [], y: [], name: 'LIFTS', type: 'bar'});
+    let data_acres = new PlotlyData({x: [], y: [], name: 'ACRES', type: 'bar'});
 
     this.resorts.forEach(function(resort){
       courses.push(resort.name);
       data_trails.y.push(resort.lifts);
       data_lifts.y.push(resort.trails);
       data_acres.y.push(resort.acres);
-    })
+    });
     data_trails.x = courses;
     data_lifts.x = courses;
     data_acres.x = courses;

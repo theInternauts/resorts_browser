@@ -22,7 +22,6 @@ export class CourseChartDetailComponent {
     // I really hate this mechanism
     if(!this.isChartInitialized) {
       this.loadCharts();
-      this.isChartInitialized = true;
     }
   }
 
@@ -44,6 +43,7 @@ export class CourseChartDetailComponent {
       let chart_0 = Plotly.newPlot('chart_div_0', data_0, layout);
       let chart_1 = Plotly.newPlot('chart_div_1', data_1, layout);
 
+      this.isChartInitialized = true;
       this.charts = [chart_0,chart_1];
     } else {
       console.log("COURSE-CHART-DETAIL: NO DATA AND NO CHARTS?", this.data, this.charts);
@@ -52,7 +52,9 @@ export class CourseChartDetailComponent {
 
   updateCharts(): void {
     console.log("COURSE-CHART-DETAIL: updating charts");
-    this.loadCharts();
+    if(this.isChartInitialized){
+      this.loadCharts();
+    }
   }
 
 }

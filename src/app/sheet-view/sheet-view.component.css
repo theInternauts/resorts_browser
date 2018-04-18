@@ -1,0 +1,21 @@
+.sheet-view-component {
+  height: 100%;
+}
+.sheet-view-component .title {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sheet-view-component .scroll-zone-container {
+  max-height: 100%;
+}
+.sheet-view .container-3d-panel {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+}
+.sheet-view .container-3d-panel span {
+  display: inline-block;
+  padding-right: 20px;
+  word-break: break-word;
+}

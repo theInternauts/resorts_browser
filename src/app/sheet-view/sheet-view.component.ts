@@ -39,7 +39,7 @@ export class SheetViewComponent {
     // TODO: submit pull request to public repo for update to plugin --> add an unmout/disable function to avoid memory leaks
     $( '.sheet-view.container-3d-panel-block' ).foldscroll({
       perspective: 900,
-      margin: '220px'
+      margin: '126px'
     });
     console.log("SheetViewComponent: start3DScroller");
   }

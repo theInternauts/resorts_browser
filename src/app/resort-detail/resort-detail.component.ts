@@ -10,7 +10,7 @@ export class ResortDetailComponent {
   @Input() resort: Resort;
   @Input() has3Dintitialized: boolean;
 
-  loupe: {};
+  loupe: Loupe;
 
   ngAfterViewChecked() {
     // I really hate this mechanism

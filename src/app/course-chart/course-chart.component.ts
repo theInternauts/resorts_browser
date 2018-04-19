@@ -12,7 +12,7 @@ export class CourseChartComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() activeSection: string;
 
-  data: PlotlyData[];
+  data: Array<any>;
 
   constructor(private resortService: ResortService) {
     this.data = [];
@@ -22,17 +22,15 @@ export class CourseChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("COURSE_CHART:ngOnInit");
     this.resorts = this.resortService.getResorts();
     this.setDataFromResorts();
   }
 
   setDataFromResorts(): void {
-    console.log("COURSE_CHART:setDataFromResorts");
     let courses = [];
-    let data_trails = new PlotlyData({x: [], y: [], name: 'TRAILS', type: 'bar'});
-    let data_lifts = new PlotlyData({x: [], y: [], name: 'LIFTS', type: 'bar'});
-    let data_acres = new PlotlyData({x: [], y: [], name: 'ACRES', type: 'bar'});
+    let data_trails = new PlotlyData([[], [], 'TRAILS', 'bar']);
+    let data_lifts = new PlotlyData([[], [], 'LIFTS', 'bar']);
+    let data_acres = new PlotlyData([[], [], 'ACRES', 'bar']);
 
     this.resorts.forEach(function(resort){
       courses.push(resort.name);
@@ -52,7 +50,6 @@ export class CourseChartComponent implements OnInit {
 
   // may need throttling
   ngOnChanges(): void {
-    console.log("COURSE_CHART:ngOnChanges");
     this.resorts = this.resortService.getResorts();
     this.setDataFromResorts();
   }

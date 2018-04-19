@@ -1,13 +1,13 @@
 export class PlotlyData {
-  x: array;
-  y: array;
+  x: Array<any>;
+  y: Array<any>;
   name: string;
   type: string;
 
-  constructor (args: <any>){
-    this.x = args.x;
-    this.y = args.y;
-    this.name = args.name;
-    this.type = args.type;
+  constructor (args: any[]){
+    this.x = args[0];
+    this.y = args[1];
+    this.name = args[2];
+    this.type = args[3];
   }
 }

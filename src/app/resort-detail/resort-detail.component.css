@@ -1,0 +1,17 @@
+.resort-meta-container .left-panel,
+.resort-meta-container .right-panel {
+  box-sizing: border-box;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 49%;
+  padding-right: 25px;
+}
+.resort-meta-container .left-panel {}
+.resort-meta-container .right-panel {}
+
+.details-label {}
+.resort-trail-map {
+  width: 100%;
+}

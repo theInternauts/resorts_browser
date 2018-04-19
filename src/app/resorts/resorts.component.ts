@@ -23,6 +23,7 @@ export class ResortsComponent implements OnInit {
 
   ngOnInit() {
     this.getResorts();
+    this.selectedResort = this.resorts[0];
   }
 
   ngOnChanges(): void {

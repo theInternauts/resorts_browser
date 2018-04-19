@@ -10,12 +10,19 @@ export class ResortDetailComponent {
   @Input() resort: Resort;
   @Input() has3Dintitialized: boolean;
 
+  loupe: {};
+
   ngAfterViewChecked() {
     // I really hate this mechanism
     if(!this.has3Dintitialized) {
       this.start3DScroller();
       this.has3Dintitialized = true;
+      this.cycleLoupe();
     }
+  }
+
+  ngOnChanges() {
+    this.cycleLoupe();
   }
 
   start3DScroller(): void {
@@ -24,6 +31,16 @@ export class ResortDetailComponent {
       perspective: 900,
       margin: '220px'
     });
-    console.log("here");
+  }
+
+  cycleLoupe(): void {
+    // Call the Loupe util
+    if (this.loupe){
+      this.loupe.destroy();
+    }
+    let $image = document.getElementById('resort-trail-map');
+    if ($image) {
+      this.loupe = new Loupe($image);
+    }
   }
 }

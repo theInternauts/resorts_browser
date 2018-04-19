@@ -1,15 +1,34 @@
 <div *ngIf="resort">
   <div class="clearfix">
-    <h2>{{ resort.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{resort.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="resort.name" placeholder="name"/>
-      </label>
+    <div class="resort-meta-container">
+      <div class="left-panel">
+        <div class="details-label">Details</div>
+        <h3 class="resort-name"><a href="{{resort.url}}" target="_new">{{ resort.name | uppercase }}</a></h3>
+      </div>
+      <div class="right-panel">
+        <table>
+          <tr>
+            <th>Lifts</th>
+            <th>Trails</th>
+            <th>Acres</th>
+            <th>Terrain Park</th>
+          </tr>
+          <tr>
+            <td>{{resort.lifts}}</td>
+            <td>{{resort.trails}}</td>
+            <td>{{resort.acres}}</td>
+            <td>{{resort.terrain_park}}</td>
+          </tr>
+        </table>
+        <!-- <div>
+          <label>name:
+            <input [(ngModel)]="resort.name" placeholder="name"/>
+          </label>
+        </div> -->
+      </div>
     </div>
-    <p>Logo</p>
-    <img src="{{resort.logo_url}}" />
-    <p>Trail Map</p>
-    <img src="{{resort.trail_map_url}}" />
+    <div class="resort-meta-container">
+      <img id="resort-trail-map" class="resort-trail-map" src="{{resort.trail_map_url}}" alt="{{resort.name}} trail map" />
+    </div>
   </div>
 </div>

@@ -19,7 +19,6 @@ export class CourseChartDetailComponent {
   }
 
   ngAfterViewChecked(): void {
-    console.log("COURSE-CHART-DETAIL: ngAfterViewChecked");
     // I really hate this mechanism
     if(!this.isChartInitialized) {
       this.loadCharts();
@@ -27,7 +26,6 @@ export class CourseChartDetailComponent {
   }
 
   ngOnChanges(): void {
-    console.log("COURSE-CHART-DETAIL: onChange");
     // semi-exhaustive check to avoid premature calls
     if(this.isChartInitialized && this.charts && this.charts.length > 0 && this.data && this.data.length > 0) {
       this.updateCharts();
@@ -35,7 +33,6 @@ export class CourseChartDetailComponent {
   }
 
   loadCharts(): void {
-    console.log("COURSE-CHART-DETAIL: loading charts");
     // need to read from data, init charts, and store chart instances to this.charts
     if(this.data && this.data.length > 0) {
       let data_0 = this.data[0];
@@ -53,7 +50,6 @@ export class CourseChartDetailComponent {
   }
 
   updateCharts(): void {
-    console.log("COURSE-CHART-DETAIL: updating charts");
     // eventually, this update should check each chart and only update the with the updated data set
     if(this.isChartInitialized){
       this.loadCharts();

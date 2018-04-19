@@ -41,6 +41,5 @@ export class SheetViewComponent {
       perspective: 900,
       margin: '126px'
     });
-    console.log("SheetViewComponent: start3DScroller");
   }
 }

@@ -22,11 +22,13 @@ export class ResortsComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("ngOnInit");
     this.getResorts();
     this.selectedResort = this.resorts[0];
   }
 
   ngOnChanges(): void {
+    console.log("ngOnChanges");
     this.resorts = this.resortService.getResorts();
   }
 
@@ -47,4 +49,24 @@ export class ResortsComponent implements OnInit {
   isActiveSection(sectionName: string): boolean {
     return (this.activeSection == sectionName);
   }
+
+  ngDoCheck(): void {
+    console.log("ngDoCheck");
+  }
+  ngAfterContentInit(): void {
+    console.log("ngAfterContentInit");
+  }
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked");
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit");
+  }
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked");
+  }
+  ngOnDestroy(): void {
+    console.log("ngOnDestroy");
+  }
+
 }

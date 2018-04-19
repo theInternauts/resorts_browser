@@ -6,7 +6,15 @@
         class="container-3d-panel"
         [class.selected]="isSelected(resort)"
         (click)="onSelect(resort)">
-          <span class="badge">{{resort.name}} | id: {{resort.id}}</span>
+          <div class="sm-panel-left">
+            <img class="small-icon" src="{{resort.logo_url}}" alt="{{resort.name}}" />
+          </div>
+          <div class="sm-panel-right">
+            <span class="badge-meta badge-name">{{resort.name}}</span>
+            <span class="badge-meta badge-address">{{resort.address}}</span>
+            <span class="badge-meta badge-phone">{{resort.phone}}</span>
+            <span class="badge-meta badge-hours">{{resort.hours_of_operation}}</span>
+          </div>
         </article>
       </section>
     </div>

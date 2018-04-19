@@ -1,17 +1,49 @@
+.resort.detail-container {
+  padding: 20px 10px 0px 10px;
+}
+.resort-meta-container.header {
+  padding-bottom: 20px;
+}
 .resort-meta-container .left-panel,
 .resort-meta-container .right-panel {
   box-sizing: border-box;
   text-align: left;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   height: 100%;
-  width: 49%;
-  padding-right: 25px;
+  width: 49.7%;
 }
 .resort-meta-container .left-panel {}
-.resort-meta-container .right-panel {}
+.resort-meta-container .right-panel {
+  text-align: right;
+  padding-left: 25px;
+}
+.resort-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.resort-meta-table {
+  width: 100%;
+}
+.resort-meta-table th,
+.resort-meta-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #000;
+}
+/*.resort-meta-table th:first-child,
+.resort-meta-table td:first-child {
+  padding-left: 20px;
+}
+.resort-meta-table th:last-child,
+.resort-meta-table td:last-child {
+  padding-right: 20px;
+}*/
+.resort-meta-table th {
+  font-weight: bold;
+  background: #fff;
+}
 
-.details-label {}
 .resort-trail-map {
   width: 100%;
   cursor: crosshair;

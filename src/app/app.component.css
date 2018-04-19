@@ -324,7 +324,7 @@ a {
   transition-delay: 1s;
 }
 
-.credit{
+.credit {
   display: block;
   position: absolute;
   bottom: 0;
@@ -340,4 +340,8 @@ a {
   color: #fff;
   text-decoration: underline;
   font-style: italic;
+}
+
+.credit-line {
+  padding-right: 10px;
 }

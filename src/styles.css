@@ -157,10 +157,10 @@ html {
   margin:0;
 }
 .column.left {
-  width: 40%;
+  width: 30%;
 }
 .column.right {
-  width: 59%;
+  width: 69%;
 }
 .clearfix:after {
   content:" ";
@@ -170,6 +170,9 @@ html {
 
 
 /******/
+body {
+  font-family: open sans, sans-serif;
+}
 .container-3d-registration-point {
   position: relative;
   background: #34485d;

@@ -1,0 +1,28 @@
+/**
+Loupe 2.0.1
+https://github.com/redoPop/loupe
+*/
+
+.loupe {
+  background: rgba(0, 0, 0, 0.25) no-repeat;
+  border-radius: 0 100% 100% 100%;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Cricket additions */
+  box-shadow: 3px 2px 11px rgba(0,0,0,0.8);
+  border: 4px solid rgba(0,0,0,0.15);
+}
+
+.loupe--active {
+  opacity: 1;
+}

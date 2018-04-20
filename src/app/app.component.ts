@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private resortService: ResortService,
-    private messageService: MessageService
+    public messageService: MessageService
   ){ }
 
   ngOnChanges(): void {

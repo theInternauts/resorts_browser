@@ -31,14 +31,7 @@
   padding: 10px;
   border: 1px solid #000;
 }
-/*.resort-meta-table th:first-child,
-.resort-meta-table td:first-child {
-  padding-left: 20px;
-}
-.resort-meta-table th:last-child,
-.resort-meta-table td:last-child {
-  padding-right: 20px;
-}*/
+
 .resort-meta-table th {
   font-weight: bold;
   background: #fff;

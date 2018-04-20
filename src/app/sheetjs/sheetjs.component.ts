@@ -1,5 +1,5 @@
 /* Adapted almost verbatum from https://github.com/SheetJS/js-xlsx/blob/master/demos/angular2/src/app/sheetjs.component.ts */
-import { Component, OnInit, Input }    from '@angular/core';
+import { Component, Input }    from '@angular/core';
 import * as XLSX                from 'xlsx';
 import { Resort }               from '../resort';
 import { ResortService }        from '../resort.service';
@@ -12,7 +12,7 @@ type AOA = any[][];
   templateUrl: './sheetjs.component.html',
   styleUrls: ['./sheetjs.component.css']
 })
-export class SheetjsComponent implements OnInit {
+export class SheetjsComponent {
   @Input() resorts: Resort[];
   @Input() data: AOA;
   @Input() activeSection: string;
@@ -25,8 +25,6 @@ export class SheetjsComponent implements OnInit {
     private resortService: ResortService,
     private messageService: MessageService
   ) { }
-
-  ngOnInit() { }
 
   ngOnChanges(): void {
     this.data = this.resortService.getData();

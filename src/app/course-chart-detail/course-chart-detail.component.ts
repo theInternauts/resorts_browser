@@ -37,10 +37,11 @@ export class CourseChartDetailComponent {
     if(this.data && this.data.length > 0) {
       let data_0 = this.data[0];
       let data_1 = this.data[1];
-      let layout = {barmode: 'group'};
+      let layout_0 = {title: 'Number of Trails and Lifts per Resort', barmode: 'group'};
+      let layout_1 = {title: 'Number of Acres per Resort', barmode: 'group'};
 
-      let chart_0 = Plotly.newPlot('chart_div_0', data_0, layout);
-      let chart_1 = Plotly.newPlot('chart_div_1', data_1, layout);
+      let chart_0 = Plotly.newPlot('chart_div_0', data_0, layout_0);
+      let chart_1 = Plotly.newPlot('chart_div_1', data_1, layout_1);
 
       this.isChartInitialized = true;
       this.charts = [chart_0,chart_1];

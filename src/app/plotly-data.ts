@@ -4,10 +4,10 @@ export class PlotlyData {
   name: string;
   type: string;
 
-  constructor (args: any[]){
-    this.x = args[0];
-    this.y = args[1];
-    this.name = args[2];
-    this.type = args[3];
+  constructor (args: any){
+    this.x = args.x;
+    this.y = args.y;
+    this.name = args.name;
+    this.type = args.type;
   }
 }

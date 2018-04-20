@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
   activeSection: string;
 
   constructor(
-    private resortService: ResortService
+    private resortService: ResortService,
+    private messageService: MessageService
   ){ }
 
   ngOnChanges(): void {
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit {
   setActiveSection(sectionName: string): void {
     if(SECTIONS.indexOf(sectionName) >= 0){
       this.activeSection = sectionName;
+      this.messageService.add(`App: set activeSection to ${sectionName}`);
     }
   }
 

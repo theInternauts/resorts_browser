@@ -15,6 +15,7 @@ type AOA = any[][];
 export class SheetjsComponent implements OnInit {
   @Input() resorts: Resort[];
   @Input() data: AOA;
+  @Input() activeSection: string;
   private headers: string[];
 
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
@@ -30,6 +31,10 @@ export class SheetjsComponent implements OnInit {
   ngOnChanges(): void {
     this.data = this.resortService.getData();
     this.resorts = this.resortService.getResorts();
+  }
+
+  isActiveSection(sectionName: string): boolean {
+    return (this.activeSection == sectionName);
   }
 
   onFileChange(evt: any) {
@@ -66,6 +71,7 @@ export class SheetjsComponent implements OnInit {
       // this.setListing();
     };
     reader.readAsBinaryString(target.files[0]);
+    this.messageService.add("Sheetjs: uploaded file");
   }
 
   export(): void {
@@ -78,6 +84,7 @@ export class SheetjsComponent implements OnInit {
 
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
+    this.messageService.add("Sheetjs: exported file");
   }
 
   // convertToResorts(data: any): Resort[] {

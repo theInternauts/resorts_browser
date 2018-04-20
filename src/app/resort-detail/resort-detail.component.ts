@@ -30,7 +30,7 @@ export class ResortDetailComponent {
     // Call the foldscroll plugin
     $( '.resorts.container-3d-panel-block' ).foldscroll({
       perspective: 900,
-      margin: '220px'
+      margin: '152px'
     });
   }
 

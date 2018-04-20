@@ -20,9 +20,15 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/font-awesome/css/font-awesome.css"
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "assets/css/loupe.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/jquery.min.js",
+        "assets/js/foldscroll.js",
+        "assets/js/plotly-latest.min.js",
+        "assets/js/loupe.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

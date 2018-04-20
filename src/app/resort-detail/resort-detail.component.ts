@@ -1,5 +1,6 @@
 import { Component, Input }   from '@angular/core';
 import { Resort }             from '../resort';
+import * as Loupe             from 'assets/js/loupe.js';
 
 @Component({
   selector: 'app-resort-detail',

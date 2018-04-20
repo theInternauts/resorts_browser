@@ -1,8 +1,10 @@
-<div *ngIf="messageService.messages.length">
-
+<div *ngIf="(messageService.messages.length && messageService.messagePanelIsVisble()) || messageService.messagePanelIsVisble()" class="message-panel-container">
   <h2>Messages</h2>
-  <button class="clear"
-          (click)="messageService.clear()">clear</button>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
-
+  <div class="clearfix btn-block">
+    <button *ngIf="messageService.messages.length" class="clear-btn" (click)="messageService.clear()">clear</button>
+    <button class="close-btn" (click)="messageService.closeMessagePanel()">close panel</button>
+  </div>
+  <div class="scroll-zone">
+    <div *ngFor='let message of messageService.messages'>{{message}}</div>
+  </div>
 </div>

@@ -1,0 +1,54 @@
+h2 {
+  color: #000;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+
+button.clear {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+.btn-block {
+  padding: 5px 0;
+}
+.clear-btn {
+  float: left;
+  color: #000;
+}
+.close-btn {
+  float: right;
+  color: #000;
+}
+
+.message-panel-container .scroll-zone {
+  overflow: scroll;
+  width: 100%;
+  max-height: 100px;
+}
+.message-panel-container {
+  position: absolute;
+  z-index: 1000;
+  bottom: 10px;
+  left: 10px;
+  width: 300px;
+  background: #fff;
+  border: 2px solid #000;
+  color: #888;
+  font-size: 12px;
+  padding: 5px;
+}

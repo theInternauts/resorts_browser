@@ -270,3 +270,8 @@ a {
 .credit-line {
   padding-right: 10px;
 }
+.open-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 35px;
+}

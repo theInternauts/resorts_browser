@@ -5,7 +5,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { ResortService } from './resort.service';
 import { MessageService } from './message.service';
-import { SheetJsService } from './sheet-js.service';
 
 import { AppComponent } from './app.component';
 import { ResortsComponent } from './resorts/resorts.component';
@@ -36,8 +35,7 @@ import { CourseChartDetailComponent } from './course-chart-detail/course-chart-d
   ],
   providers: [
     ResortService,
-    MessageService,
-    SheetJsService
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

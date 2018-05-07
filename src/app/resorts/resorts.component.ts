@@ -9,7 +9,7 @@ import { MessageService }             from '../message.service';
   styleUrls: ['./resorts.component.css']
 })
 export class ResortsComponent implements OnInit {
-  @Input() resorts: Resort[];
+  resorts: Resort[];
   @Input() activeSection: string;
   selectedResort: Resort;
   has3Dintitialized: boolean;

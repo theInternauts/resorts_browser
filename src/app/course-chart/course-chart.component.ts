@@ -9,7 +9,7 @@ import { ResortService }              from '../resort.service';
   styleUrls: ['./course-chart.component.css']
 })
 export class CourseChartComponent implements OnInit {
-  @Input() resorts: Resort[];
+  resorts: Resort[];
   @Input() activeSection: string;
 
   data: Array<any>;

@@ -1,3 +1,7 @@
+.resorts-component {
+  background: #ecf0f1;
+}
+
 .selected {
   background: #ccc;
   font-weight: bold;

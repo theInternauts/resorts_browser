@@ -14,6 +14,7 @@ import { SheetjsComponent } from './sheetjs/sheetjs.component';
 import { SheetViewComponent } from './sheet-view/sheet-view.component';
 import { CourseChartComponent } from './course-chart/course-chart.component';
 import { CourseChartDetailComponent } from './course-chart-detail/course-chart-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 
@@ -31,7 +32,8 @@ import { CourseChartDetailComponent } from './course-chart-detail/course-chart-d
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [
     ResortService,

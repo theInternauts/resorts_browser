@@ -279,6 +279,33 @@ body {
     margin: 0 10px;
 }
 
+
+/*********/
+body, html {
+  margin: 0;
+  height: 100%;
+  display: block;
+  width: 100%;
+  background: #34495e;
+}
+.main-app-base {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.main-app-base.left {
+  width: 9%;
+  text-align: center;
+}
+.main-app-base.right {
+  width: 90%;
+}
+/*********/
+
 @media (max-width: 600px) {
     .container-3d .container-3d-panel-block .container-3d-panel {
         padding: 60px 30px;

@@ -14,3 +14,25 @@
   cursor: pointer;
   text-align: center;
 }
+
+.credit {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+  padding: 20px;
+  font-family: open sans, sans-serif;
+}
+
+.credit a {
+  color: #fff;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.credit-line {
+  padding-right: 10px;
+}

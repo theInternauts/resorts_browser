@@ -27,7 +27,7 @@ html, body, section, .page {
 }
 
 section {
-  width:400%;
+  /*width:400%;*/
 }
 
 .page {
@@ -62,10 +62,6 @@ section {
   left: 400%;
 }
 
-ul {
- position: fixed;
- z-index: 1;
-}
 #t0:target .page#p0 {
     transform: translateX(0);
 }
@@ -137,25 +133,23 @@ ul .icon:hover {
   transform: scale(1.2) !important;
 }
 
+.Xmain-nav-list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /*right: 0;*/
+  width: 10%;
+
+  z-index: 1;
+}
+
 .main-nav-list a span {
   margin-top: 8px;
   display: inline-block;
   font-size: 12px;
   text-transform: uppercase;
 }
-
-ul {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  /*right: 0;*/
-  margin: auto;
-  height: 280px;
-  width: 10%;
-  padding: 0;
-  text-align: center;
- }
 
 ul li {
   margin: 30px 0;
@@ -249,29 +243,22 @@ a {
   transition-delay: 1s;
 }
 
-.credit {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: #fff;
-  text-align: left;
-  font-size: 12px;
-  padding: 20px;
-  font-family: open sans, sans-serif;
-}
-
-.credit a {
-  color: #fff;
-  text-decoration: underline;
-  font-style: italic;
-}
-
-.credit-line {
-  padding-right: 10px;
-}
 .open-btn {
   position: absolute;
   bottom: 10px;
   left: 35px;
 }
+
+/******************************************/
+/*.main-nav-list {
+  width: 10%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.main-content-container {
+  width: 90%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}*/

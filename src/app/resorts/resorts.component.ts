@@ -1,4 +1,4 @@
-import { Component, OnInit, Input }   from '@angular/core';
+import { Component, OnInit }   from '@angular/core';
 import { Resort }                     from '../resort';
 import { ResortService }              from '../resort.service';
 import { MessageService }             from '../message.service';
@@ -17,18 +17,28 @@ export class ResortsComponent implements OnInit {
     private resortService: ResortService,
     private messageService: MessageService
   ) {
-    this.has3Dintitialized = true;
+    this.has3Dintitialized = false;
+    this.resorts = [];
   }
 
   ngOnInit() {
-    console.log("ngOnInit");
+    this.messageService.add("<-- Resorts Init -->");
     this.getResorts();
     this.selectedResort = this.resorts[0];
   }
 
   ngOnChanges(): void {
-    console.log("ngOnChanges");
-    this.resorts = this.resortService.getResorts();
+    this.messageService.add("<-- RESORTS ngOnChanges -->");
+    this.getResorts();
+    this.has3Dintitialized = false;
+  }
+
+  ngAfterViewChecked(): void {
+    // I really hate this mechanism but it's necessary mainly becasue the foldscroll plugin doens't have a destroy() function
+    if(!this.has3Dintitialized) {
+      this.start3DScroller();
+      this.has3Dintitialized = true;
+    }
   }
 
   onSelect(resort: Resort): void {
@@ -40,28 +50,15 @@ export class ResortsComponent implements OnInit {
   }
 
   getResorts(): void {
-    if(this.resorts === undefined){
-      this.resorts = this.resortService.getResorts();
-    }
+    this.resorts = this.resortService.getResorts();
   }
 
-  ngDoCheck(): void {
-    console.log("ngDoCheck");
+  start3DScroller(): void {
+    // Call the foldscroll plugin
+    // If I had more tme I'd add a destroy() function to open source plugin $.fn.foldscroll()
+    $( '.resorts.container-3d-panel-block' ).foldscroll({
+      perspective: 900,
+      margin: '152px'
+    });
   }
-  ngAfterContentInit(): void {
-    console.log("ngAfterContentInit");
-  }
-  ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked");
-  }
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit");
-  }
-  ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked");
-  }
-  ngOnDestroy(): void {
-    console.log("ngOnDestroy");
-  }
-
 }

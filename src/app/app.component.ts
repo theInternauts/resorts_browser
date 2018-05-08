@@ -20,14 +20,16 @@ export class AppComponent implements OnInit {
     public messageService: MessageService
   ){ }
 
-  ngOnChanges(): void {
-    this.setDataSources()
-  }
-
   ngOnInit() {
     this.messageService.add("<-- AppComponent Init -->");
     this.setDataSources();
   }
+
+  ngOnChanges(): void {
+    this.messageService.add("<-- AppComponent ngOnChanges -->");
+    this.setDataSources()
+  }
+
 
   setDataSources(): void {
     this.data = this.resortService.getData();

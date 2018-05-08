@@ -26,11 +26,6 @@ export class ResortService {
     return this.data;
   }
 
-  // getResort(id: number): Resort {
-  //   this.messageService.add(`ResortService: fetched resort id=${id}`);
-  //   return this.resorts.find(resort => resort.id === id);
-  // }
-
   setResorts(data: AOA): void {
     // assumes headers are present
     let data_no_header = data.slice(1);
@@ -52,6 +47,8 @@ export class ResortService {
         return new Resort(r);
       } else {
         // first row is the header
+        // this is probably bad to return becasue the header is NOT a Resort object
+        // need to deal with this. Seperate variable maybe?
         return r;
       }
     });

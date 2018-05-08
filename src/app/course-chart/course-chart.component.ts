@@ -10,8 +10,6 @@ import { ResortService }              from '../resort.service';
 })
 export class CourseChartComponent implements OnInit {
   resorts: Resort[];
-  @Input() activeSection: string;
-
   data: Array<any>;
 
   constructor(private resortService: ResortService) {
@@ -55,9 +53,5 @@ export class CourseChartComponent implements OnInit {
   ngOnChanges(): void {
     this.resorts = this.resortService.getResorts();
     this.setDataFromResorts();
-  }
-
-  isActiveSection(sectionName: string): boolean {
-    return (this.activeSection == sectionName);
   }
 }

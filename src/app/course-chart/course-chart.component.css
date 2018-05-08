@@ -1,5 +1,9 @@
 .course-chart-component {
   background: #ecf0f1;
+  height: 100%;
+}
+.scroll-zone-container {
+  max-height: 100%;
 }
 .scroll-zone {
   padding-bottom: 65px;

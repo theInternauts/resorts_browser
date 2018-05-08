@@ -1,7 +1,6 @@
-<!-- <div *ngIf="resorts && isActiveSection('COURSE_CHART')" style="height:100%;"> -->
-<div *ngIf="data" style="height:100%;" class="course-chart-component">
+<div *ngIf="data" class="course-chart-component">
   <h2 class="title">COURSE DATA</h2>
-  <div class="scroll-zone-container" style="max-height: 100%;">
+  <div class="scroll-zone-container">
     <div class="scroll-zone">
       <app-course-chart-detail [data]="data"></app-course-chart-detail>
     </div>

@@ -10,7 +10,6 @@ import { MessageService }             from '../message.service';
 })
 export class ResortsComponent implements OnInit {
   resorts: Resort[];
-  @Input() activeSection: string;
   selectedResort: Resort;
   has3Dintitialized: boolean;
 
@@ -44,10 +43,6 @@ export class ResortsComponent implements OnInit {
     if(this.resorts === undefined){
       this.resorts = this.resortService.getResorts();
     }
-  }
-
-  isActiveSection(sectionName: string): boolean {
-    return (this.activeSection == sectionName);
   }
 
   ngDoCheck(): void {

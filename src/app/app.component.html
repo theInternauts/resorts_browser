@@ -1,11 +1,10 @@
 <div class="app-component">
   <nav class="main-app-base left vertical-container">
     <ul class="main-nav-list vertical-center-content-block">
-      <li><a routerLink="/" href="/" [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a></li>
-      <li><a routerLink="data" href="/data" [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a></li>
-      <li><a routerLink="resorts" href="/resorts" [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a></li>
-      <li><a routerLink="courses" href="/courses" [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a></li>
-      <li><a routerLink="map" href="/map" [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')"><fa name="fa-map-o" class="icon fa fa-map-o" id="cuatro"></fa><span>Map</span></a></li>
+      <li><a routerLink="/" href="/"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a></li>
+      <li><a routerLink="data" href="/data"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a></li>
+      <li><a routerLink="resorts" href="/resorts"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a></li>
+      <li><a routerLink="courses" href="/courses"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a></li>
       <li><button class="open-btn" (click)="messageService.openMessagePanel()">open panel</button></li>
     </ul>
     <span class="vertical-spacer-block"></span>

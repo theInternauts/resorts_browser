@@ -11,8 +11,6 @@ type AOA = any[][];
 })
 export class SheetViewComponent implements OnInit {
   data: AOA;
-  @Input() activeSection: string;
-
   has3Dintitialized: boolean;
 
   constructor(
@@ -37,10 +35,6 @@ export class SheetViewComponent implements OnInit {
   ngOnChanges(): void {
     this.has3Dintitialized = false;
     this.data = this.resortService.getData();
-  }
-
-  isActiveSection(sectionName: string): boolean {
-    return (this.activeSection == sectionName);
   }
 
   start3DScroller(): void {

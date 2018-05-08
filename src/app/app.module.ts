@@ -13,7 +13,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { SheetjsComponent } from './sheetjs/sheetjs.component';
 import { SheetViewComponent } from './sheet-view/sheet-view.component';
 import { CourseChartComponent } from './course-chart/course-chart.component';
-import { CourseChartDetailComponent } from './course-chart-detail/course-chart-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 
@@ -26,8 +25,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MessagesComponent,
     SheetjsComponent,
     SheetViewComponent,
-    CourseChartComponent,
-    CourseChartDetailComponent
+    CourseChartComponent
   ],
   imports: [
     BrowserModule,

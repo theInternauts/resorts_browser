@@ -21,11 +21,16 @@ export class AppComponent implements OnInit {
   ){ }
 
   ngOnChanges(): void {
-    this.data = this.resortService.getData();
-    this.resorts = this.resortService.getResorts();
+    this.setDataSources()
   }
 
   ngOnInit() {
+    this.messageService.add("<-- AppComponent Init -->");
+    this.setDataSources();
+  }
 
+  setDataSources(): void {
+    this.data = this.resortService.getData();
+    this.resorts = this.resortService.getResorts();
   }
 }

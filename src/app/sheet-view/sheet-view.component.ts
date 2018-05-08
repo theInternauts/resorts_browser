@@ -1,4 +1,4 @@
-import { Component, Input, OnInit }   from '@angular/core';
+import { Component, OnInit }   from '@angular/core';
 import { ResortService }              from '../resort.service';
 import { MessageService }             from '../message.service';
 
@@ -25,16 +25,17 @@ export class SheetViewComponent implements OnInit {
     this.data = this.resortService.getData();
   }
 
+  ngOnChanges(): void {
+    this.messageService.add("<-- Sheet view ngOnChanges -->");
+    this.has3Dintitialized = false;
+    this.data = this.resortService.getData();
+  }
+
   ngAfterViewChecked() {
     if(!this.has3Dintitialized) {
       this.start3DScroller();
       this.has3Dintitialized = true;
     }
-  }
-
-  ngOnChanges(): void {
-    this.has3Dintitialized = false;
-    this.data = this.resortService.getData();
   }
 
   start3DScroller(): void {

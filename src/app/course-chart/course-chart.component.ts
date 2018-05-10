@@ -13,7 +13,6 @@ export class CourseChartComponent implements OnInit {
   resorts: Resort[];
   chart_data: Array<any>;
   charts: any[];
-  isChartInitialized: boolean;
 
   constructor(
     private resortService: ResortService,
@@ -22,7 +21,6 @@ export class CourseChartComponent implements OnInit {
     this.resorts = [];
     this.chart_data = [];
     this.charts = [];
-    this.isChartInitialized = false;
   }
 
   ngOnInit() {
@@ -34,24 +32,15 @@ export class CourseChartComponent implements OnInit {
   ngOnChanges(): void {
     this.resorts = this.resortService.getResorts();
     this.setDataFromResorts();
-    // semi-exhaustive check to avoid premature calls
-    if(this.isChartInitialized && this.charts && this.charts.length > 0 && this.chart_data && this.chart_data.length > 0) {
-      this.updateCharts();
-    }
+    this.updateCharts();
   }
 
-  ngAfterViewChecked(): void {
-    // I really hate this mechanism
-    if(!this.isChartInitialized) {
-      this.loadCharts();
-    }
+  ngAfterViewInit(): void {
+    this.loadCharts();
   }
 
   setDataFromResorts(): void {
     let courses = [];
-    // let data_trails = new PlotlyData([[], [], 'TRAILS', 'bar']);
-    // let data_lifts = new PlotlyData([[], [], 'LIFTS', 'bar']);
-    // let data_acres = new PlotlyData([[], [], 'ACRES', 'bar']);
     let data_trails = new PlotlyData({x:[], y:[], name:'TRAILS', type:'bar'});
     let data_lifts = new PlotlyData({x:[], y:[], name:'LIFTS', type:'bar'});
     let data_acres = new PlotlyData({x:[], y:[], name:'ACRES', type:'bar'});
@@ -83,17 +72,16 @@ export class CourseChartComponent implements OnInit {
       let chart_0 = Plotly.newPlot('chart_div_0', data_0, layout_0);
       let chart_1 = Plotly.newPlot('chart_div_1', data_1, layout_1);
 
-      this.isChartInitialized = true;
       this.charts = [chart_0,chart_1];
     } else {
-      console.log("COURSE-CHART-DETAIL: NO DATA AND NO CHARTS?", this.chart_data, this.charts);
+      let msg = "COURSE-CHART-DETAIL: NO DATA AND NO CHARTS?";
+      this.messageService.add(msg);
+      console.log(msg, this.chart_data, this.charts);
     }
   }
 
   updateCharts(): void {
     // eventually, this update should check each chart and only update the with the updated data set
-    if(this.isChartInitialized){
-      this.loadCharts();
-    }
+    this.loadCharts();
   }
 }

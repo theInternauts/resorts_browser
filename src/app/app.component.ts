@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(
     private resortService: ResortService,
     public messageService: MessageService
-  ){ }
+  ) { }
 
   ngOnInit() {
     this.messageService.add("<-- AppComponent Init -->");
@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
     this.messageService.add("<-- AppComponent ngOnChanges -->");
     this.setDataSources()
   }
-
 
   setDataSources(): void {
     this.data = this.resortService.getData();

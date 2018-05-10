@@ -2,6 +2,7 @@ import { Component, OnInit }   from '@angular/core';
 import { Resort }                     from '../resort';
 import { PlotlyData }                 from '../plotly-data';
 import { ResortService }              from '../resort.service';
+import { MessageService }             from '../message.service';
 
 @Component({
   selector: 'app-course-chart',
@@ -14,7 +15,10 @@ export class CourseChartComponent implements OnInit {
   charts: any[];
   isChartInitialized: boolean;
 
-  constructor(private resortService: ResortService) {
+  constructor(
+    private resortService: ResortService,
+    private messageService: MessageService
+  ) {
     this.resorts = [];
     this.chart_data = [];
     this.charts = [];
@@ -22,6 +26,7 @@ export class CourseChartComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.messageService.add("<-- Course Chart Init -->");
     this.resorts = this.resortService.getResorts();
     this.setDataFromResorts();
   }

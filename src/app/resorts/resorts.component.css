@@ -43,6 +43,11 @@
 .badge-hours {
   font-size: 0.8em;
 }
+.selected .badge-address,
+.selected .badge-phone,
+.selected .badge-hours {
+  font-size: 0.76em;
+}
 .badge-name,
 .badge-address {
   padding-bottom: 0.75em;

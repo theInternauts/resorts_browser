@@ -11,14 +11,11 @@ type AOA = any[][];
 })
 export class SheetViewComponent implements OnInit {
   data: AOA;
-  has3Dintitialized: boolean;
 
   constructor(
     private resortService: ResortService,
     private messageService: MessageService
-  ) {
-    this.has3Dintitialized = false;
-  }
+  ) { }
 
   ngOnInit() {
     this.messageService.add("<-- Sheet view Init -->");
@@ -26,16 +23,11 @@ export class SheetViewComponent implements OnInit {
   }
 
   ngOnChanges(): void {
-    this.messageService.add("<-- Sheet view ngOnChanges -->");
-    this.has3Dintitialized = false;
     this.data = this.resortService.getData();
   }
 
-  ngAfterViewChecked() {
-    if(!this.has3Dintitialized) {
-      this.start3DScroller();
-      this.has3Dintitialized = true;
-    }
+  ngAfterViewInit() {
+    this.start3DScroller();
   }
 
   start3DScroller(): void {

@@ -12,14 +12,12 @@ import * as Loupe                     from 'assets/js/loupe.js';
 export class ResortsComponent implements OnInit {
   resorts: Resort[];
   selectedResort: Resort;
-  has3Dintitialized: boolean;
   loupe: Loupe;
 
   constructor(
     private resortService: ResortService,
     private messageService: MessageService
   ) {
-    this.has3Dintitialized = false;
     this.resorts = [];
   }
 
@@ -30,21 +28,12 @@ export class ResortsComponent implements OnInit {
   }
 
   ngOnChanges(): void {
-    this.messageService.add("<-- RESORTS ngOnChanges -->");
     this.getResorts();
-    this.has3Dintitialized = false;
   }
 
   ngAfterViewInit(): void {
+    this.start3DScroller();
     this.cycleLoupe();
-  }
-
-  ngAfterViewChecked(): void {
-    // I really hate this mechanism but it's necessary mainly becasue the foldscroll plugin doens't have a destroy() function
-    if(!this.has3Dintitialized) {
-      this.start3DScroller();
-      this.has3Dintitialized = true;
-    }
   }
 
   onSelect(resort: Resort): void {

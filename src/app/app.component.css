@@ -1,17 +1,13 @@
 
 * {
-  transition: all 500ms ease-out;
-  -webkit-transition: all 500ms ease-out;
   box-sizing: border-box !important;
 }
 
-html, body, section, .page {
+html, body, section {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
-  -webkit-transition: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
   color: #2c3e50;
   /*background: #374046;*/
   background: #34495e;
@@ -21,10 +17,6 @@ html, body, section, .page {
 .app-component {
   height: 100%;
   width: 100%;
-}
-
-.page {
-  position: absolute;
 }
 
 .icon {
@@ -76,111 +68,13 @@ ul.main-nav-list li {
   text-transform: uppercase;
 }
 
-
 a {
   text-decoration: none;
   font-family: open sans, sans-serif;
 }
 
-.title, .hint {
-  font-family: open sans, sans-serif;
-  display: block;
-}
-
 .title {
+  font-family: open sans, sans-serif;
   font-size: 38px;
-}
-
-.hint {
-  font-size: 13px;
-}
-
-.hint a {
-  color: #EFFF06;
-  transition: all 250ms easet-out;
-}
-
-.hint a:hover {
-  color: #FFF;
-}
-
-.page .late-slider {
-  position: absolute;
-  transform: translateX(360%);
-  padding: 20px;
-  width: 100%;
-  margin: auto;
-  height: 100%;
   display: block;
 }
-.page .late-slider.edge-to-edge {
-  padding: 0;
-  width: 90%;
-}
-.page .icon {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 10%;
-  left: 0;
-  width: 270px;
-  height: 170px;
-  margin: auto;
-  text-align: center;
-  font-size: 80px;
-  transform: translateX(360%);
-  line-height: 1.3;
-}
-/*
-.page#p0 .icon {
-  height: 220px;
-}
-
-.page#p0 .icon,
-.page#p0 .late-slider {
-  transform: translateX(0) !important;
-}
-
-#t1:target .page#p1 .icon,
-#t1:target .page#p1 .late-slider {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
-
-#t2:target .page#p2 .icon,
-#t2:target .page#p2 .late-slider {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
-
-#t3:target .page#p3 .icon,
-#t3:target .page#p3 .late-slider {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
-
-#t4:target .page#p4 .icon,
-#t4:target .page#p4 .late-slider {
-  transform: translateX(0) !important;
-  transition-delay: 1s;
-}
-*/
-/*.open-btn {
-  position: absolute;
-  bottom: 10px;
-  left: 35px;
-}*/
-
-/******************************************/
-/*.main-nav-list {
-  width: 10%;
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}
-.main-content-container {
-  width: 90%;
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}*/

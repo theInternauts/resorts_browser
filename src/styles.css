@@ -70,6 +70,11 @@ html, body, section {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34495e', endColorstr='#12273d',GradientType=1 ); /* IE6-9 */
 }
 
+.transition-screen {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
 .title {
   font-size: 26px;
   padding: 0.35em;

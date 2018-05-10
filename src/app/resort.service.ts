@@ -6,6 +6,7 @@ import { MessageService } from './message.service';
 type AOA = any[][];
 
 @Injectable()
+
 export class ResortService {
   resorts: Resort[] = RESORTS_SHORT;
   data: AOA = [

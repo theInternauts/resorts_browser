@@ -24,7 +24,9 @@ export class ResortsComponent implements OnInit {
   ngOnInit() {
     this.messageService.add("<-- Resorts Init -->");
     this.getResorts();
-    this.selectedResort = this.resorts[0];
+    if(this.resorts.length > 0){
+      this.selectedResort = this.resorts[0];
+    }
   }
 
   ngOnChanges(): void {

@@ -2,7 +2,6 @@ import { Component, OnInit }  from '@angular/core';
 import { ResortService }      from './resort.service';
 import { MessageService }     from './message.service';
 import { Resort }             from './resort';
-import { RESORTS_SHORT }      from './mock-resorts-short';
 
 type AOA = any[][];
 

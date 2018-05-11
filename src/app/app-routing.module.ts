@@ -6,11 +6,11 @@ import { SheetjsComponent }           from './sheetjs/sheetjs.component';
 import { CourseChartComponent }       from './course-chart/course-chart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'upload', pathMatch: 'full' },
-  { path: 'upload', component: SheetjsComponent },
-  { path: 'data', component: SheetViewComponent },
-  { path: 'resorts', component: ResortsComponent },
-  { path: 'courses', component: CourseChartComponent }
+  { path: '',         component: SheetjsComponent },
+  { path: 'data',     component: SheetViewComponent },
+  { path: 'resorts',  component: ResortsComponent },
+  { path: 'courses',  component: CourseChartComponent },
+  { path: '*',        component: SheetjsComponent }
 ];
 
 @NgModule({

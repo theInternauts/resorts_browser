@@ -1,7 +1,7 @@
 <div class="app-component">
   <nav class="main-app-base left vertical-container">
     <ul class="main-nav-list vertical-center-content-block">
-      <li><a routerLink="/" href="/" routerLinkActive="selected"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a></li>
+      <li><a routerLink="/" href="/" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a></li>
       <li><a routerLink="data" href="/data" routerLinkActive="selected"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a></li>
       <li><a routerLink="resorts" href="/resorts" routerLinkActive="selected"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a></li>
       <li><a routerLink="courses" href="/courses" routerLinkActive="selected"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a></li>

@@ -34,4 +34,13 @@ export class AppComponent implements OnInit {
     this.data = this.resortService.getData();
     this.resorts = this.resortService.getResorts();
   }
+
+  // triggerTransition(): void {
+  //   $('.tr-registration-anchor').addClass('tr-transition-overlay')
+  //   $('.tr-page').addClass('tr-offStage')
+  //   window.setTimeout(function(){
+  //     $('.tr-registration-anchor').removeClass('tr-transition-overlay');
+  //     $('.tr-page').removeClass('tr-offStage');
+  //   }, 1100);
+  // }
 }

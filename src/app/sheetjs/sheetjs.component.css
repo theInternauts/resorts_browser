@@ -1,3 +1,10 @@
+.title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 38px;
+  padding-left: 0;
+  margin: 20px auto;
+}
 .data-upload-links {
   color: #fff;
   padding: 0;

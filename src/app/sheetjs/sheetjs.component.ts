@@ -15,6 +15,7 @@ type AOA = any[][];
 export class SheetjsComponent {
   resorts: Resort[];
   data: AOA;
+  title: string = "THE RESORT BROWSER";
   @Input() activeSection: string;
   private headers: string[];
 

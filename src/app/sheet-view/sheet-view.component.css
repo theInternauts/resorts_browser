@@ -1,5 +1,6 @@
 .sheet-view-component {
   height: 100%;
+  background: #ecf0f1;
 }
 .sheet-view-component .title {
   padding-left: 20px;

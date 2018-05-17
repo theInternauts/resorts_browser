@@ -1,3 +1,10 @@
+.title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 38px;
+  padding-left: 0;
+  margin: 20px auto;
+}
 .data-upload-links {
   color: #fff;
   padding: 0;
@@ -13,4 +20,26 @@
   display: block;
   cursor: pointer;
   text-align: center;
+}
+
+.credit {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+  padding: 20px;
+  font-family: open sans, sans-serif;
+}
+
+.credit a {
+  color: #fff;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.credit-line {
+  padding-right: 10px;
 }

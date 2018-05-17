@@ -1,58 +1,20 @@
-<div class="ct" id="t1">
-    <div class="ct" id="t2">
-      <div class="ct" id="t3">
-        <div class="ct" id="t4">
-          <section>
-            <ul class="main-nav-list">
-              <a href="#t0" [class.selected]="isActiveSection('HOME')" (click)="setActiveSection('HOME')"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a>
-              <a href="#t1" [class.selected]="isActiveSection('DATA')" (click)="setActiveSection('DATA')"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a>
-              <a href="#t2" [class.selected]="isActiveSection('RESORTS')" (click)="setActiveSection('RESORTS')"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a>
-              <a href="#t3" [class.selected]="isActiveSection('COURSE_CHART')" (click)="setActiveSection('COURSE_CHART')"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a>
-              <a href="#t4" [class.selected]="isActiveSection('FULL_MAP')" (click)="setActiveSection('FULL_MAP')"><fa name="fa-map-o" class="icon fa fa-map-o" id="cuatro"></fa><span>Map</span></a>
-            </ul>
-            <div class="page" id="p0">
-              <span class="late-slider">
-                <h1 class="title">
-                  {{ title }}
-                </h1>
-                <div class="data-upload-links-container inline-three">
-                  <app-sheetjs [data]="data"></app-sheetjs>
-                </div>
-              </span>
-              <div class="credit">
-                <p><span class="credit-line">&#187;</span>Made with Angular 5 by <a href="http://WeAreTheInternauts.com/">Christopher "Cricket" Wallace</a></p>
-                <p><span class="credit-line">&#187;</span>Main layout based on original Code Pen by <a href="https://codepen.io/hrtzt/">Alberto Hartzet</a></p>
-                <p><span class="credit-line">&#187;</span>3D effect from Fold Scroll jQuery plugin by <a href="https://soulwire.co.uk/fold-scroll/">Justin Windle</a></p>
-                <p><span class="credit-line">&#187;</span>Loupe, a jQuery image magnifier, by <a href="https://github.com/redoPop/loupe">Joe Bartlett</a></p>
-                <p><span class="credit-line">&#187;</span>Charts from 2018 MIT Licensed <a href="https://github.com/plotly/plotly.js">Plotly.js</a></p>
-              </div>
-            </div>
-            <div class="page" id="p1">
-              <span class="late-slider edge-to-edge">
-                <app-sheet-view [data]="data" [activeSection]="activeSection"></app-sheet-view>
-              </span>
-            </div>
-            <div class="page" id="p2">
-              <span class="late-slider edge-to-edge">
-                <app-resorts [resorts]="resorts" [activeSection]="activeSection"></app-resorts>
-              </span>
-            </div>
-            <div class="page" id="p3">
-              <span class="late-slider edge-to-edge">
-                <app-course-chart [resorts]="resorts" [activeSection]="activeSection"></app-course-chart>
-              </span>
-            </div>
-            <div class="page" id="p4">
-              <span class="late-slider edge-to-edge">
-                <h3 class="title">Coming soon</h3>
-                <div>(maybe I should figure out Angular deployment, first)</div>
-                <!-- <app-google-maps [resorts]="resorts" [activeSection]="activeSection"></app-google-maps> -->
-              </span>
-            </div>
-            <button class="open-btn" (click)="messageService.openMessagePanel()">open panel</button>
-        </section>
-      </div>
+<div class="app-component">
+  <nav class="main-app-base left vertical-container">
+    <ul class="main-nav-list vertical-center-content-block">
+      <li><a routerLink="/" href="/" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}"><fa name="fa-home" class="icon fa fa-home" id="cero"></fa><span>Home</span></a></li>
+      <li><a routerLink="data" href="/data" routerLinkActive="selected"><fa name="fa-line-chart" class="icon fa fa-line-chart" id="uno"></fa><span>Data</span></a></li>
+      <li><a routerLink="resorts" href="/resorts" routerLinkActive="selected"><fa name="fa-snowflake-o" class="icon fa fa-snowflake-o" id="dos"></fa><span>Resorts</span></a></li>
+      <li><a routerLink="courses" href="/courses" routerLinkActive="selected"><fa name="fa-tasks" class="icon fa fa-tasks" id="tres"></fa><span>Courses</span></a></li>
+      <li><button class="open-btn" (click)="messageService.openMessagePanel()">open panel</button></li>
+    </ul>
+    <span class="vertical-spacer-block"></span>
+  </nav>
+  <section class="main-content-container main-app-base right tr-registration-anchor">
+    <div class="tr-page">
+      <router-outlet></router-outlet>
     </div>
-  </div>
+  </section>
+  <aside>
+    <app-messages></app-messages>
+  </aside>
 </div>
-<app-messages></app-messages>

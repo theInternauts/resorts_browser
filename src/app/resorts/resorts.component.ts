@@ -1,7 +1,8 @@
-import { Component, OnInit, Input }   from '@angular/core';
+import { Component, OnInit }          from '@angular/core';
 import { Resort }                     from '../resort';
 import { ResortService }              from '../resort.service';
 import { MessageService }             from '../message.service';
+import * as Loupe                     from 'assets/js/loupe.js';
 
 @Component({
   selector: 'app-resorts',
@@ -9,31 +10,37 @@ import { MessageService }             from '../message.service';
   styleUrls: ['./resorts.component.css']
 })
 export class ResortsComponent implements OnInit {
-  @Input() resorts: Resort[];
-  @Input() activeSection: string;
+  resorts: Resort[];
   selectedResort: Resort;
-  has3Dintitialized: boolean;
+  loupe: Loupe;
 
   constructor(
     private resortService: ResortService,
     private messageService: MessageService
   ) {
-    this.has3Dintitialized = true;
+    this.resorts = [];
   }
 
   ngOnInit() {
-    console.log("ngOnInit");
+    this.messageService.add("<-- Resorts Init -->");
     this.getResorts();
-    this.selectedResort = this.resorts[0];
+    if(this.resorts.length > 0){
+      this.selectedResort = this.resorts[0];
+    }
   }
 
   ngOnChanges(): void {
-    console.log("ngOnChanges");
-    this.resorts = this.resortService.getResorts();
+    this.getResorts();
+  }
+
+  ngAfterViewInit(): void {
+    this.start3DScroller();
+    this.cycleLoupe();
   }
 
   onSelect(resort: Resort): void {
     this.selectedResort = resort;
+    this.cycleLoupe();
   }
 
   isSelected(resort): boolean {
@@ -41,32 +48,26 @@ export class ResortsComponent implements OnInit {
   }
 
   getResorts(): void {
-    if(this.resorts === undefined){
-      this.resorts = this.resortService.getResorts();
+    this.resorts = this.resortService.getResorts();
+  }
+
+  start3DScroller(): void {
+    // Call the foldscroll plugin
+    // If I had more tme I'd add a destroy() function to open source plugin $.fn.foldscroll()
+    $( '.resorts.container-3d-panel-block' ).foldscroll({
+      perspective: 900,
+      margin: '152px'
+    });
+  }
+
+  cycleLoupe(): void {
+    // Call the Loupe util
+    if (this.loupe){
+      this.loupe.destroy();
+    }
+    let $image = document.getElementById('resort-trail-map');
+    if ($image) {
+      this.loupe = new Loupe($image);
     }
   }
-
-  isActiveSection(sectionName: string): boolean {
-    return (this.activeSection == sectionName);
-  }
-
-  ngDoCheck(): void {
-    console.log("ngDoCheck");
-  }
-  ngAfterContentInit(): void {
-    console.log("ngAfterContentInit");
-  }
-  ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked");
-  }
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit");
-  }
-  ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked");
-  }
-  ngOnDestroy(): void {
-    console.log("ngOnDestroy");
-  }
-
 }

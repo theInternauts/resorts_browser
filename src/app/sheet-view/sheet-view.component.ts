@@ -1,5 +1,6 @@
-import { Component, Input }   from '@angular/core';
-import { ResortService }  from '../resort.service';
+import { Component, OnInit }   from '@angular/core';
+import { ResortService }              from '../resort.service';
+import { MessageService }             from '../message.service';
 
 type AOA = any[][];
 
@@ -8,30 +9,25 @@ type AOA = any[][];
   templateUrl: './sheet-view.component.html',
   styleUrls: ['./sheet-view.component.css']
 })
-export class SheetViewComponent {
-  @Input() data: AOA;
-  @Input() activeSection: string;
+export class SheetViewComponent implements OnInit {
+  data: AOA;
 
-  has3Dintitialized: boolean;
+  constructor(
+    private resortService: ResortService,
+    private messageService: MessageService
+  ) { }
 
-  constructor(private resortService: ResortService) {
-    this.has3Dintitialized = false;
-  }
-
-  ngAfterViewChecked() {
-    if(!this.has3Dintitialized) {
-      this.start3DScroller();
-      this.has3Dintitialized = true;
-    }
-  }
-
-  ngOnChanges(): void {
-    this.has3Dintitialized = false;
+  ngOnInit() {
+    this.messageService.add("<-- Sheet view Init -->");
     this.data = this.resortService.getData();
   }
 
-  isActiveSection(sectionName: string): boolean {
-    return (this.activeSection == sectionName);
+  ngOnChanges(): void {
+    this.data = this.resortService.getData();
+  }
+
+  ngAfterViewInit() {
+    this.start3DScroller();
   }
 
   start3DScroller(): void {

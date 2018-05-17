@@ -13,8 +13,9 @@ type AOA = any[][];
   styleUrls: ['./sheetjs.component.css']
 })
 export class SheetjsComponent {
-  @Input() resorts: Resort[];
-  @Input() data: AOA;
+  resorts: Resort[];
+  data: AOA;
+  title: string = "THE RESORT BROWSER";
   @Input() activeSection: string;
   private headers: string[];
 

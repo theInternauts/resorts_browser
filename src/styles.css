@@ -48,87 +48,28 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/******/
 
-/*mobile*/
-@media (max-width: 768px) {
-  body {
-    font-size: 13px;
-    line-height: 16px;
-    padding: 0;
-  }
-  #search {
-    position: static;
-    width: 100%;
-    font-size: 2em;
-    line-height: 1.8em;
-    text-indent: 10px;
-    border: 0;
-    border-radius: 0;
-    padding: 10px 0;
-    margin: 0;
-  }
-  #search:focus {
-    width: 100%;
-    border: 0;
-    opacity: 1;
-  }
-  .directory h1 {
-    font-size: 2em;
-    line-height: 1.5em;
-    color: #fff;
-    background: #000;
-    padding: 15px 10px;
-    margin: 0;
-  }
-  ul#files {
-    border-top: 1px solid #cacaca;
-  }
-  ul#files li {
-    float: none;
-    width: auto !important;
-    display: block;
-    border-bottom: 1px solid #cacaca;
-    font-size: 2em;
-    line-height: 1.2em;
-    text-indent: 0;
-    margin: 0;
-  }
-  ul#files li:nth-child(odd) {
-    background: #e0e0e0;
-  }
-  ul#files li a {
-    height: auto;
-    border: 0;
-    border-radius: 0;
-    padding: 15px 10px;
-  }
-  ul#files li a:focus,
-  ul#files li a:hover {
-    border: 0;
-  }
-  #files .header,
-  #files .size,
-  #files .date {
-    display: none !important;
-  }
-  #files .name {
-    float: none;
-    display: inline-block;
-    width: 100%;
-    text-indent: 0;
-    background-position: 0 50%;
-  }
-  #files .icon .name {
-    text-indent: 41px;
-  }
-}
-/* global styles */
+/* Base layout scafolding */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
-html {
+
+html, body, section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
   overflow: hidden;
+  font-family: open sans, sans-serif;
+  background: #34495e; /* Old browsers */
+  background: -moz-linear-gradient(left, #34495e 0%, #34495e 15%, #12273d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #34495e 0%,#34495e 15%,#12273d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #34495e 0%,#34495e 15%,#12273d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34495e', endColorstr='#12273d',GradientType=1 ); /* IE6-9 */
 }
+
 .title {
   font-size: 26px;
   padding: 0.35em;
@@ -136,19 +77,101 @@ html {
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.main-app-base {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.main-app-base.left {
+  width: 9.69%;
+  text-align: center;
+}
+
+.main-app-base.right {
+  width: 90%;
+}
+/******/
+
+
+/* transition styles */
+.tr-registration-anchor {
+  position: relative;
+  transition: all .4s linear;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -o-transition: all .4s linear;
+}
+.tr-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -webkit-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -moz-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+  -o-transition: all .6s cubic-bezier(.5, .2, .2, 1.1);
+}
+.tr-page {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+.tr-page.tr-offStage {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transition-delay: .4s !important;
+}
+
+.tr-transition-overlay {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+/******/
+
+/* Internal Component layout scafolding */
+.vertical-container .vertical-spacer-block,
+.vertical-container .vertical-center-content-block {
+  height: 100%;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.vertical-container .vertical-center-content-block {
+  width: 95%;
+  height: initial;
+  text-align: center;
+  padding: 10px;
+}
+
 .scroll-zone-container {
   height: 100%;
   display: block;
 }
+
 .scroll-zone-container .scroll-zone {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
 }
+
 .scroll-zone-container .scroll-zone.allow-x-scroll {
   overflow-x: scroll;
   width: 100%;
 }
+
 .column {
   display: inline-block;
   height: 100%;
@@ -156,23 +179,23 @@ html {
   padding:10px 5px;
   margin:0;
 }
+
 .column.left {
   width: 30%;
 }
+
 .column.right {
   width: 69%;
 }
+
 .clearfix:after {
   content:" ";
   display:table;
   clear:both;
 }
-
-
 /******/
-body {
-  font-family: open sans, sans-serif;
-}
+
+/* For jQuery plugin $.fn.foldscroll()  */
 .container-3d-registration-point {
   position: relative;
   background: #34485d;
@@ -186,66 +209,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
-/* Info */
-
-.container-3d #info {
-    font-size: 12px;
-    position: absolute;
-    z-index: 1;
-    color: #fff;
-    width: 260px;
-    left: 20px;
-    top: 20px;
-}
-
-.container-3d #info a {
-    text-decoration: none;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.container-3d #info a:hover {
-    color: #fff;
-}
-
-.container-3d #info header, #info aside {
-    font-family: open sans, sans-serif;
-    background: rgba(0, 0, 0, 0.8);
-    margin-bottom: 1px;
-}
-
-.container-3d #info header {
-    padding: 12px 10px;
-}
-
-.container-3d #info header hgroup h1 {
-    line-height: 22px;
-    font-weight: 300;
-    font-size: 18px;
-    margin: 0;
-}
-
-.container-3d #info header hgroup h2 {
-    line-height: 14px;
-    font-weight: 300;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 6px 0;
-}
-
-.container-3d #info header a {
-    text-transform: uppercase;
-    margin-right: 4px;
-    line-height: 20px;
-    font-size: 10px;
-}
-
-.container-3d #info aside {
-    padding: 2px 10px;
-}
-
-/* Demo */
 
 .container-3d .container-3d-panel-block {
     position: absolute;
@@ -278,14 +241,4 @@ body {
     content: '~';
     margin: 0 10px;
 }
-
-@media (max-width: 600px) {
-    .container-3d .container-3d-panel-block .container-3d-panel {
-        padding: 60px 30px;
-        line-height: 1.5;
-        font-size: 12px;
-    }
-    .container-3d .container-3d-panel-block .container-3d-panel em {
-        font-size: 10px;
-    }
-}
+/******/
